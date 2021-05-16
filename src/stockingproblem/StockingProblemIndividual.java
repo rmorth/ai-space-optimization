@@ -15,7 +15,10 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
     private int cuts;
     private int waste;
 
+    private int auxMaxColumns;
+
     private final static double WEIGHT_PENALTY_CUTS = 0.2;
+    private final static double WEIGHT_PENALTY_WIDTH = 0.1;
     private final static double WEIGHT_PENALTY_WASTE = 0.7;
 
     public StockingProblemIndividual(StockingProblem problem, int size) {
@@ -41,12 +44,14 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         this.solution = original.solution;
         this.cuts = original.cuts;
         this.waste = original.waste;
+        this.auxMaxColumns = original.auxMaxColumns;
     }
 
     @Override
     public double computeFitness() {
         fitness = 0;
         waste = 0;
+        auxMaxColumns = 0;
 
         solution = new ArrayList[problem.getMaterialHeight()];
 
@@ -70,62 +75,67 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         }
 
         System.out.println(Arrays.toString(genome) + ":");
-        System.out.println(solutionRepresentation(false));
         cuts = calculateCuts();
-        waste = calculateWaste();
+        waste += calculateNonzeroWaste();
+        //System.out.println("[C:"+cuts+"|W:"+waste+"|MC:"+auxMaxColumns+"]");
+        //System.out.println(solutionRepresentation(true));
 
-        fitness = cuts * WEIGHT_PENALTY_CUTS + waste * WEIGHT_PENALTY_WASTE;
+        fitness = cuts * WEIGHT_PENALTY_CUTS + waste * WEIGHT_PENALTY_WASTE + auxMaxColumns * WEIGHT_PENALTY_WIDTH;
         return fitness;
     }
 
 
     private int calculateCuts() {
-        int vcuts = 0;
-        int hcuts = 0;
+        int vcuts = 0; // cortes verticais (não na vertical)
+        int hcuts = 0; // cortes horizontais (não na horizontal)
         // TODO: OPTIMISE (probably can be done as we place..?)
         for (int i = 0; i < solution.length; i++) {
-            for (int j = 0; j < solution[i].size(); j++) {
-                if (solution[i].get(j) == 0) continue;
-                if (j+1 >= solution[i].size() || (solutionTileFilled(i, j+1)) && solution[i].get(j) != solution[i].get(j+1)) vcuts++;
-                if (i+1 < problem.getMaterialHeight() && solution[i].get(j) != solution[i+1].get(j)) hcuts++;
+            for (int j = 0; j < auxMaxColumns; j++) {
 
-                // since we're skipping 0s, we need to check above and to the left and count it as a cut (if it's a 0 in that position)
-                if (i-1 >= 0 && solution[i].get(j) != solution[i-1].get(j) && solution[i-1].get(j) == 0) hcuts++;
-                if ((j-1 > 0) && solution[i].get(j) != solution[i].get(j-1) && solution[i].get(j-1) == 0) vcuts++;
+                if (solutionTileFilled(i, j) && solution[i].get(j) == 0) continue;
+
+                if (j < solution[i].size()) {
+                    // Cortes verticais
+                    if (j + 1 >= solution[i].size() || solution[i].get(j) != solution[i].get(j + 1)) vcuts++;
+                    if ((j - 1 >= 0) && solution[i].get(j) != solution[i].get(j - 1) && solution[i].get(j - 1) == 0) {
+                        vcuts++;
+                    }
+                    // Cortes horizontais
+                    if (i+1 < problem.getMaterialHeight()) {
+                        if (j < solution[i+1].size()) {
+                            if (solution[i].get(j) != solution[i + 1].get(j)) hcuts++;
+                        } else hcuts++; //  j >= solution[i+1].size()
+                    }
+
+                    if (i - 1 >= 0 && j < solution[i - 1].size() && solution[i - 1].get(j) == 0) {
+                        if (solution[i].get(j) != solution[i - 1].get(j))hcuts++;
+                    }
+                } else if (i+1 < problem.getMaterialHeight() && j >= solution[i].size() && j < solution[i+1].size()) hcuts++;
             }
         }
         return hcuts + vcuts;
     }
 
-    private int calculateWaste() {
+    // Non-zero waste (not all waste is represented by 0) wasn't being calculated, this calculates it
+    private int calculateNonzeroWaste() {
         int w = 0;
-
-        for (List<Integer> ints : solution) {
-            for (Integer anInt : ints) {
-                if (anInt == 0) w++;
-            }
+        for (int i = 0; i < problem.getMaterialHeight(); i++) {
+            w += auxMaxColumns - solution[i].size();
         }
         return w;
     }
 
     // Função que adiciona um item.getRepresentation à solução
     private void addToSolution(int lineIndex, int columnIndex, Integer value) {
-        while (!solutionTileFilled(lineIndex, columnIndex)) {
-            solution[lineIndex].add(0);
-
-            for (int i = 1; i < problem.getMaterialHeight(); i++) {
-                if (lineIndex-i >= 0 && !solutionTileFilled(lineIndex-i, columnIndex)) {
-                    solution[lineIndex-i].add(0);
-
-                }
-                if (lineIndex+i < problem.getMaterialHeight() && !solutionTileFilled(lineIndex+i, columnIndex)) {
-                    solution[lineIndex+i].add(0);
-                }
+        while(this.solution[lineIndex].size() <= columnIndex) { // cInd: 1
+            if (this.solution[lineIndex].size() < columnIndex) {
+                this.solution[lineIndex].add(0);
+                waste++;
+            } else {
+                this.solution[lineIndex].add(value);
+                if (columnIndex > auxMaxColumns-1) auxMaxColumns = columnIndex+1;
             }
         }
-
-        this.solution[lineIndex].set(columnIndex, value);
-
     }
 
     // Função auxiliar
@@ -144,8 +154,6 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
             for (int j = 0; j < itemMatrix[i].length; j++) {
                 if (itemMatrix[i][j] != 0) {
                     addToSolution(lineIndex + i, columnIndex + j, (int) item.getRepresentation());
-                } else {
-                    addToSolution(lineIndex + i, columnIndex + j, 0);
                 }
             }
         }
@@ -193,6 +201,8 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         sb.append("cuts: ").append(cuts);
         sb.append(newLine);
         sb.append("waste: ").append(waste);
+        sb.append(newLine);
+        sb.append("max columns used: ").append(auxMaxColumns);
         sb.append(newLine).append(newLine);
 
         sb.append(solutionRepresentation(true));
