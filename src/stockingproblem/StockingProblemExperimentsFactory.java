@@ -67,10 +67,10 @@ public class StockingProblemExperimentsFactory extends ExperimentsFactory {
                 mutation = new MutationInsert<>(mutationProbability);
                 break;
             case "mutation2": //TODO
-                mutation = new Mutation2<>(mutationProbability);
+                mutation = new MutationSwap<>(mutationProbability);
                 break;
             case "mutation3": //TODO
-                mutation = new Mutation3<>(mutationProbability);
+                mutation = new MutationInversion<>(mutationProbability);
                 break;
         }
 

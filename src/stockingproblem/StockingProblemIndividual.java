@@ -61,9 +61,9 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
 
         for (int k : genome) {
             boolean placed = false;
+            var item = problem.getItems().get(k);
             for (int j = 0; j < problem.getMaterialWidth(); j++) {
                 for (int i = 0; i < problem.getMaterialHeight(); i++) {
-                    var item = problem.getItems().get(k);
                     if (checkValidPlacement(item, i, j)) {
                         place(item, i, j);
                         placed = true;
@@ -72,13 +72,14 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
                 }
                 if (placed) break;
             }
+            if (!placed) System.out.println(1);
         }
 
-        System.out.println(Arrays.toString(genome) + ":");
-        cuts = calculateCuts();
-        waste += calculateNonzeroWaste();
+        //System.out.println(Arrays.toString(genome) + ":");
+        //cuts = calculateCuts();
+        //waste += calculateNonzeroWaste();
         //System.out.println("[C:"+cuts+"|W:"+waste+"|MC:"+auxMaxColumns+"]");
-        //System.out.println(solutionRepresentation(true));
+        //System.out.println(solutionRepresentation(false));
 
         fitness = cuts * WEIGHT_PENALTY_CUTS + waste * WEIGHT_PENALTY_WASTE + auxMaxColumns * WEIGHT_PENALTY_WIDTH;
         return fitness;
@@ -127,7 +128,7 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
 
     // Função que adiciona um item.getRepresentation à solução
     private void addToSolution(int lineIndex, int columnIndex, Integer value) {
-        while(this.solution[lineIndex].size() <= columnIndex) { // cInd: 1
+        while(this.solution[lineIndex].size() <= columnIndex) {
             if (this.solution[lineIndex].size() < columnIndex) {
                 this.solution[lineIndex].add(0);
                 waste++;
@@ -205,7 +206,7 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         sb.append("max columns used: ").append(auxMaxColumns);
         sb.append(newLine).append(newLine);
 
-        sb.append(solutionRepresentation(true));
+        sb.append(solutionRepresentation(false));
 
 
         return sb.toString();
