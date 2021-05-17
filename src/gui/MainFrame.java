@@ -451,7 +451,7 @@ class PanelParameters extends PanelAtributesValue {
     String[] recombinationMethods = {"PMX", "Recombination 2", "Recombination 3"};
     JComboBox jComboBoxRecombinationMethods = new JComboBox(recombinationMethods);
     JTextField jTextFieldProbRecombination = new JTextField(PROB_RECOMBINATION, TEXT_FIELD_LENGHT);
-    String[] mutationMethods = {"Insert", "Swap", "Mutation 3"};
+    String[] mutationMethods = {"Insert", "Swap", "Inversion"};
     JComboBox jComboBoxMutationMethods = new JComboBox(mutationMethods);
     JTextField jTextFieldProbMutation = new JTextField(PROB_MUTATION, TEXT_FIELD_LENGHT);
     String[] algorithms = {"GA", "Random"};
