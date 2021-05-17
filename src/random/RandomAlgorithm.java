@@ -1,6 +1,7 @@
 package random;
 
 import algorithms.Algorithm;
+import algorithms.AlgorithmEvent;
 import algorithms.Individual;
 import algorithms.Problem;
 
@@ -14,8 +15,24 @@ public class RandomAlgorithm<I extends Individual, P extends Problem<I>> extends
     }
 
     @Override
-    public I run(P problem) {
-        //TODO
-        throw new UnsupportedOperationException("Not implemented yet.");
+    public I run(P problem) { // See GeneticAlgorithm and adapt
+        this.t = 0;
+        I individual = problem.getNewIndividual();
+        individual.computeFitness();
+        this.globalBest = individual;
+        fireIterationEnded(new AlgorithmEvent(this));
+
+        while (t < maxIterations && !stopped) {
+            individual = problem.getNewIndividual();
+            individual.computeFitness();
+            if (individual.compareTo(this.globalBest) > 0) {
+                this.globalBest = (I) individual.clone();
+            }
+            this.t++;
+            fireIterationEnded(new AlgorithmEvent(this));
+        }
+
+        fireRunEnded(new AlgorithmEvent(this));
+        return this.globalBest;
     }
 }

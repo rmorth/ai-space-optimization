@@ -72,7 +72,7 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
                 }
                 if (placed) break;
             }
-            if (!placed) System.out.println(1);
+            if (!placed) throw new RuntimeException("Couldn't place a piece!"); // just in case
         }
 
         //System.out.println(Arrays.toString(genome) + ":");
