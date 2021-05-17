@@ -76,8 +76,8 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         }
 
         //System.out.println(Arrays.toString(genome) + ":");
-        //cuts = calculateCuts();
-        //waste += calculateNonzeroWaste();
+        cuts = calculateCuts();
+        waste += calculateNonzeroWaste();
         //System.out.println("[C:"+cuts+"|W:"+waste+"|MC:"+auxMaxColumns+"]");
         //System.out.println(solutionRepresentation(false));
 
@@ -128,6 +128,12 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
 
     // Função que adiciona um item.getRepresentation à solução
     private void addToSolution(int lineIndex, int columnIndex, Integer value) {
+        if (this.solution[lineIndex].size() > columnIndex) {
+            this.solution[lineIndex].set(columnIndex, value);
+            waste--;
+            return;
+        };
+
         while(this.solution[lineIndex].size() <= columnIndex) {
             if (this.solution[lineIndex].size() < columnIndex) {
                 this.solution[lineIndex].add(0);
@@ -196,6 +202,8 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
     public String toString() {
         String newLine = "\n";
         StringBuilder sb = new StringBuilder();
+        sb.append("genome: ").append(Arrays.toString(genome));
+        sb.append(newLine);
         sb.append("fitness: ");
         sb.append(fitness);
         sb.append(newLine);
@@ -206,7 +214,7 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         sb.append("max columns used: ").append(auxMaxColumns);
         sb.append(newLine).append(newLine);
 
-        sb.append(solutionRepresentation(false));
+        sb.append(solutionRepresentation(true));
 
 
         return sb.toString();
