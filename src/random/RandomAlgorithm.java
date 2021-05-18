@@ -8,7 +8,6 @@ import algorithms.Problem;
 import java.util.Random;
 
 public class RandomAlgorithm<I extends Individual, P extends Problem<I>> extends Algorithm<I, P> {
-    //TODO this class might require the definition of additional methods and/or attributes
 
     public RandomAlgorithm(int maxIterations, Random rand) {
         super(maxIterations, rand);

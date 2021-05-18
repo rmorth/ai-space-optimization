@@ -527,9 +527,9 @@ class PanelParameters extends PanelAtributesValue {
             case 0:
                 return new RecombinationPartialMapped<>(recombinationProb);
             case 1:
-                return new Recombination2<>(recombinationProb);
+                return new RecombinationOrder<>(recombinationProb);
             case 2:
-                return new Recombination3<>(recombinationProb);
+                return new RecombinationCycle<>(recombinationProb);
         }
         return null;
     }

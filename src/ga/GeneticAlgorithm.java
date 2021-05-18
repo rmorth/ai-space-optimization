@@ -42,7 +42,9 @@ public class GeneticAlgorithm<I extends Individual, P extends Problem<I>> extend
             recombination.run(populationAux);
             mutation.run(populationAux);
             population = populationAux;
+
             I bestInGen = population.evaluate();
+
             computeBestInRun(bestInGen);
             t++;
             fireIterationEnded(new AlgorithmEvent(this));

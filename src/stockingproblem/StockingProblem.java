@@ -10,7 +10,6 @@ public class StockingProblem implements Problem<StockingProblemIndividual> {
     private int materialHeight;
     private int materialWidth;
     private ArrayList<Item> items;
-    //TODO this class might require the definition of additional methods and/or attributes
 
     public StockingProblem(int materialHeight, ArrayList<Item> items) {
         this.materialHeight = materialHeight;
