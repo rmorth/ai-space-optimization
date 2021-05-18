@@ -448,7 +448,7 @@ class PanelParameters extends PanelAtributesValue {
     String[] selectionMethods = {"Tournament", "Roulette wheel"};
     JComboBox jComboBoxSelectionMethods = new JComboBox(selectionMethods);
     JTextField jTextFieldTournamentSize = new JTextField(TOURNAMENT_SIZE, TEXT_FIELD_LENGHT);
-    String[] recombinationMethods = {"PMX", "Recombination 2", "Recombination 3"};
+    String[] recombinationMethods = {"PMX", "OX (Order)", "CX (Cycle)"};
     JComboBox jComboBoxRecombinationMethods = new JComboBox(recombinationMethods);
     JTextField jTextFieldProbRecombination = new JTextField(PROB_RECOMBINATION, TEXT_FIELD_LENGHT);
     String[] mutationMethods = {"Insert", "Swap", "Inversion"};
