@@ -1,5 +1,7 @@
 package algorithms;
 
+import ga.GeneticAlgorithm;
+
 import java.util.ArrayList;
 
 public abstract class IntVectorIndividual<P extends Problem, I extends IntVectorIndividual> extends Individual<P, I> {
@@ -29,6 +31,20 @@ public abstract class IntVectorIndividual<P extends Problem, I extends IntVector
                 return i;
         }
         return -1;
+    }
+
+    public int[] getCuts() {
+        int[] pair = new int[2];
+        pair[0] = GeneticAlgorithm.random.nextInt(getNumGenes());
+        do {
+            pair[1] = GeneticAlgorithm.random.nextInt(getNumGenes());
+        }while (pair[0]==pair[1]);
+        if (pair[0] > pair[1]) {
+            int aux = pair[0];
+            pair[0] = pair[1];
+            pair[1] = aux;
+        }
+        return pair;
     }
 
     public ArrayList<Integer> subList(int cut1, int cut2) {

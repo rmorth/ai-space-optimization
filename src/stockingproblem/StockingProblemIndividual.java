@@ -8,7 +8,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class StockingProblemIndividual extends IntVectorIndividual<StockingProblem, StockingProblemIndividual> {
-    // https://duckduckgo.com/?q=.ppt+crossover+operators+for+permutation+representation&t=newext&atb=v270-2&ia=web
     // testar cruzamento, mut: 0
     // implementar rotação: (array separada com a mesma dimensão que a solution, 1:1)
     private List<Integer>[] solution;
@@ -30,7 +29,7 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
     }
 
     private void shuffleGenome(int size) {
-        for (int i = 0; i < genome.length; i++) {
+        for (int i = 0; i < size; i++) {
             int randomIndex = GeneticAlgorithm.random.nextInt(size);
             if (i == randomIndex) continue;
             int aux = genome[i];

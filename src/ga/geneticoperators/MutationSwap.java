@@ -14,15 +14,11 @@ public class MutationSwap<I extends IntVectorIndividual, P extends Problem<I>> e
     public void mutate(I ind) {
         // Swap Mutation: (according to powerpoint)
         // Pick 2 random alleles, swap their positions
+        int[] cuts = ind.getCuts(); // cut1 will always be < cut2, shouldn't be a problem
 
-        int rInd2, rInd = GeneticAlgorithm.random.nextInt(ind.getNumGenes());
-        do {
-            rInd2 = GeneticAlgorithm.random.nextInt(ind.getNumGenes());
-        }while(rInd == rInd2);
-
-        int aux = ind.getGene(rInd);
-        ind.setGene(rInd, ind.getGene(rInd2));
-        ind.setGene(rInd2, aux);
+        int aux = ind.getGene(cuts[0]);
+        ind.setGene(cuts[0], ind.getGene(cuts[1]));
+        ind.setGene(cuts[1], aux);
     }
 
     @Override
