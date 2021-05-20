@@ -34,17 +34,19 @@ public class GeneticAlgorithm<I extends Individual, P extends Problem<I>> extend
     public I run(P problem) {
         t = 0;
         population = new Population<>(populationSize, problem);
+
         globalBest = population.evaluate();
+//        I elite = globalBest;
         fireIterationEnded(new AlgorithmEvent(this));
 
         while (t < maxIterations && !stopped) {
             Population<I, P> populationAux = selection.run(population);
+            // replace last with elite
             recombination.run(populationAux);
             mutation.run(populationAux);
             population = populationAux;
 
             I bestInGen = population.evaluate();
-
             computeBestInRun(bestInGen);
             t++;
             fireIterationEnded(new AlgorithmEvent(this));

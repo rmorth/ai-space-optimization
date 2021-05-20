@@ -48,6 +48,10 @@ public class Population <I extends Individual, P extends Problem<I>>{
     public I getIndividual(int index) {
         return individuals.get(index);
     }
+
+    public void swapIndividual(int index, I newIndividual) {
+        individuals.set(index, newIndividual);
+    }
     
     public I getBest(){
         return best;

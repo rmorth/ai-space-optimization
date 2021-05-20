@@ -78,7 +78,7 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         cuts = calculateCuts();
         waste += calculateNonzeroWaste();
         //System.out.println("[C:"+cuts+"|W:"+waste+"|MC:"+auxMaxColumns+"]");
-        //System.out.println(solutionRepresentation(false));
+       // System.out.println(solutionRepresentation(false));
 
         fitness = cuts * WEIGHT_PENALTY_CUTS + waste * WEIGHT_PENALTY_WASTE + auxMaxColumns * WEIGHT_PENALTY_WIDTH;
         return fitness;
@@ -179,7 +179,7 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         return true;
     }
 
-    private String solutionRepresentation(boolean convertToSpaces) {
+    public String solutionRepresentation(boolean convertToSpaces) {
         StringBuilder sb = new StringBuilder();
         String newLine = "\n";
         for (int i = 0; i < problem.getMaterialHeight(); i++) {
@@ -201,6 +201,15 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
     public String toString() {
         String newLine = "\n";
         StringBuilder sb = new StringBuilder();
+        sb.append(solutionStats());
+        sb.append(solutionRepresentation(true));
+
+        return sb.toString();
+    }
+
+    public String solutionStats() {
+        String newLine = "\n";
+        StringBuilder sb = new StringBuilder();
         sb.append("genome: ").append(Arrays.toString(genome));
         sb.append(newLine);
         sb.append("fitness: ");
@@ -209,13 +218,7 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         sb.append("cuts: ").append(cuts);
         sb.append(newLine);
         sb.append("waste: ").append(waste);
-        sb.append(newLine);
-        sb.append("max columns used: ").append(auxMaxColumns);
         sb.append(newLine).append(newLine);
-
-        sb.append(solutionRepresentation(true));
-
-
         return sb.toString();
     }
 
@@ -233,5 +236,9 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
     public StockingProblemIndividual clone() {
         return new StockingProblemIndividual(this);
 
+    }
+
+    public List<Integer>[] getSolution() {
+        return this.solution.clone();
     }
 }

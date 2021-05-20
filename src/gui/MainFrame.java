@@ -14,6 +14,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
 import java.util.List;
 import javax.swing.*;
@@ -35,7 +37,10 @@ public class MainFrame extends JFrame implements AlgorithmListener {
     private Algorithm<StockingProblemIndividual, StockingProblem> algorithm;
     private StockingProblemExperimentsFactory experimentsFactory;
     private PanelTextArea problemPanel;
-    PanelTextArea bestIndividualPanel;
+    private PanelTextArea timePanel;
+    //PanelTextArea bestIndividualPanel;
+    PanelTextArea solutionStats;
+    SolutionGrid solutionGrid;
     private PanelParameters panelParameters = new PanelParameters();
     private JButton buttonDataSet = new JButton("Data set");
     private JButton buttonRun = new JButton("Run");
@@ -109,11 +114,25 @@ public class MainFrame extends JFrame implements AlgorithmListener {
         northPanel.add(chartPanel, java.awt.BorderLayout.CENTER);
 
         //Center panel
-        problemPanel = new PanelTextArea("Problem data: ", 20, 40);
-        bestIndividualPanel = new PanelTextArea("Best solution: ", 20, 40);
+        problemPanel = new PanelTextArea("Problem data: ", 10, 30);
+        //bestIndividualPanel = new PanelTextArea("Solution Representation: ", 10, 40);
+        solutionStats = new PanelTextArea("Solution Stats: ", 5, 40);
+        timePanel = new PanelTextArea("Time Analysis: ", 10, 40);
+
+        JPanel solutionPanel = new JPanel(new BorderLayout());
+        solutionStats.textArea.setFont(solutionStats.textArea.getFont().deriveFont(12f));
+
+        //solutionPanel.add(timePanel, BorderLayout.CENTER);
+        solutionPanel.add(solutionStats, BorderLayout.NORTH);
+
         JPanel centerPanel = new JPanel(new BorderLayout());
         centerPanel.add(problemPanel, java.awt.BorderLayout.WEST);
-        centerPanel.add(bestIndividualPanel, java.awt.BorderLayout.CENTER);
+        solutionGrid = new SolutionGrid();
+
+        centerPanel.add(solutionGrid, BorderLayout.CENTER);
+
+
+        centerPanel.add(solutionPanel, BorderLayout.SOUTH);
 
         //South Panel
         JPanel southPanel = new JPanel();
@@ -129,6 +148,8 @@ public class MainFrame extends JFrame implements AlgorithmListener {
         southPanel.add(new JLabel("Status: "));
         southPanel.add(textFieldExperimentsStatus);
         textFieldExperimentsStatus.setEditable(false);
+
+
 
         //Global structure
         JPanel globalPanel = new JPanel(new BorderLayout());
@@ -167,7 +188,7 @@ public class MainFrame extends JFrame implements AlgorithmListener {
                 return;
             }
 
-            bestIndividualPanel.textArea.setText("");
+            //bestIndividualPanel.textArea.setText("");
             seriesBestIndividual.clear();
             seriesAverage.clear();
             switch (panelParameters.getAlgorithm()) {
@@ -223,8 +244,15 @@ public class MainFrame extends JFrame implements AlgorithmListener {
     @Override
     public void iterationEnded(AlgorithmEvent e) {
         Algorithm<StockingProblemIndividual, StockingProblem> source = e.getSource();
-        bestIndividualPanel.textArea.setText(source.getGlobalBest().toString());
+        //bestIndividualPanel.textArea.setText(source.getGlobalBest().solutionRepresentation(true));
+
+        solutionStats.textArea.setText(source.getGlobalBest().solutionStats());
         seriesBestIndividual.add(source.getIteration(), source.getGlobalBest().getFitness());
+
+        solutionGrid.setIndividual(source.getGlobalBest());
+        solutionGrid.setProblem(warehouse);
+        solutionGrid.repaint();
+
         if (source instanceof GeneticAlgorithm)
             seriesAverage.add(source.getIteration(), ((GeneticAlgorithm)source).getAverageFitness());
         if (worker.isCancelled()) {
@@ -451,7 +479,7 @@ class PanelParameters extends PanelAtributesValue {
     String[] recombinationMethods = {"PMX", "OX (Order)", "CX (Cycle)"};
     JComboBox jComboBoxRecombinationMethods = new JComboBox(recombinationMethods);
     JTextField jTextFieldProbRecombination = new JTextField(PROB_RECOMBINATION, TEXT_FIELD_LENGHT);
-    String[] mutationMethods = {"Insert", "Swap", "Inversion"};
+    String[] mutationMethods = {"Insert", "Swap", "Inversion", "Scramble"};
     JComboBox jComboBoxMutationMethods = new JComboBox(mutationMethods);
     JTextField jTextFieldProbMutation = new JTextField(PROB_MUTATION, TEXT_FIELD_LENGHT);
     String[] algorithms = {"GA", "Random"};
@@ -546,6 +574,8 @@ class PanelParameters extends PanelAtributesValue {
                 return new MutationSwap<>(mutationProb);
             case 2:
                 return new MutationInversion<>(mutationProb);
+            case 3:
+                return new MutationScramble<>(mutationProb);
         }
         return null;
     }
