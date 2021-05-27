@@ -19,8 +19,10 @@ import java.time.Instant;
 import java.util.*;
 import java.util.List;
 import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 import random.RandomAlgorithm;
+import statistics.ExecutionTime;
 import stockingproblem.*;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -37,7 +39,7 @@ public class MainFrame extends JFrame implements AlgorithmListener {
     private Algorithm<StockingProblemIndividual, StockingProblem> algorithm;
     private StockingProblemExperimentsFactory experimentsFactory;
     private PanelTextArea problemPanel;
-    private PanelTextArea timePanel;
+    private JPanel timePanel;
     //PanelTextArea bestIndividualPanel;
     PanelTextArea solutionStats;
     SolutionGrid solutionGrid;
@@ -117,13 +119,16 @@ public class MainFrame extends JFrame implements AlgorithmListener {
         problemPanel = new PanelTextArea("Problem data: ", 10, 30);
         //bestIndividualPanel = new PanelTextArea("Solution Representation: ", 10, 40);
         solutionStats = new PanelTextArea("Solution Stats: ", 5, 40);
-        timePanel = new PanelTextArea("Time Analysis: ", 10, 40);
+        timePanel = new JPanel();
+        timePanel.setLayout(new BorderLayout());
+        timePanel.add(new JLabel("Time Analysis: "), BorderLayout.NORTH);
 
         JPanel solutionPanel = new JPanel(new BorderLayout());
         solutionStats.textArea.setFont(solutionStats.textArea.getFont().deriveFont(12f));
 
         //solutionPanel.add(timePanel, BorderLayout.CENTER);
-        solutionPanel.add(solutionStats, BorderLayout.NORTH);
+        solutionPanel.add(solutionStats, BorderLayout.EAST);
+        solutionPanel.add(timePanel, BorderLayout.CENTER);
 
         JPanel centerPanel = new JPanel(new BorderLayout());
         centerPanel.add(problemPanel, java.awt.BorderLayout.WEST);
@@ -191,6 +196,9 @@ public class MainFrame extends JFrame implements AlgorithmListener {
             //bestIndividualPanel.textArea.setText("");
             seriesBestIndividual.clear();
             seriesAverage.clear();
+            ExecutionTime executionTime = ExecutionTime.getInstance();
+            executionTime.setRoot(new DefaultMutableTreeNode("Time Analysis"));
+
             switch (panelParameters.getAlgorithm()) {
                 case 0:
                     algorithm = new GeneticAlgorithm<StockingProblemIndividual, StockingProblem>(
@@ -264,6 +272,9 @@ public class MainFrame extends JFrame implements AlgorithmListener {
 
     @Override
     public void runEnded(AlgorithmEvent e) {
+        JTree timeAnalysis = new JTree(ExecutionTime.getInstance().getRoot());
+        timePanel.remove(0); // remove previous JTree or else it'll bug out
+        timePanel.add(timeAnalysis);
     }
 
     public void jButtonStop_actionPerformed(ActionEvent e) {

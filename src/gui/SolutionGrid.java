@@ -18,13 +18,12 @@ public class SolutionGrid extends JPanel {
     private static final int SQUARE_HEIGHT = 16;
     private final static Color BACKGROUND_COLOR = new Color(150, 150, 150);
     private static final Color WASTE_COLOR = new Color(100, 100, 100);
-    private static final Random random = new Random();
 
     private StockingProblemIndividual individual;
     private StockingProblem problem;
     private List<Integer>[] solution;
     private ArrayList<Color> colors;
-    HashMap<Integer, Color> colorsMappedByItem;
+    private HashMap<Integer, Color> colorsMappedByItem;
 
     public SolutionGrid() {
         super();
@@ -32,8 +31,6 @@ public class SolutionGrid extends JPanel {
         this.colors = new ArrayList<>();
         this.addColors(); // ~25 colors, big datasets will have repeated colors
     }
-
-
 
     public SolutionGrid(StockingProblemIndividual individual, StockingProblem problem) {
         super();

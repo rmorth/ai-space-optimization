@@ -3,6 +3,8 @@ package stockingproblem;
 import algorithms.IntVectorIndividual;
 import ga.GeneticAlgorithm;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -61,6 +63,7 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         for (int k : genome) {
             boolean placed = false;
             var item = problem.getItems().get(k);
+            // FIXME: using materialWidth
             for (int j = 0; j < problem.getMaterialWidth(); j++) {
                 for (int i = 0; i < problem.getMaterialHeight(); i++) {
                     if (checkValidPlacement(item, i, j)) {
@@ -78,8 +81,7 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         cuts = calculateCuts();
         waste += calculateNonzeroWaste();
         //System.out.println("[C:"+cuts+"|W:"+waste+"|MC:"+auxMaxColumns+"]");
-       // System.out.println(solutionRepresentation(false));
-
+        // System.out.println(solutionRepresentation(false));
         fitness = cuts * WEIGHT_PENALTY_CUTS + waste * WEIGHT_PENALTY_WASTE + auxMaxColumns * WEIGHT_PENALTY_WIDTH;
         return fitness;
     }

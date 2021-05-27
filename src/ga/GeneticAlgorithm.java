@@ -5,7 +5,13 @@ import algorithms.*;
 import ga.geneticoperators.Mutation;
 import ga.geneticoperators.Recombination;
 import ga.selectionmethods.SelectionMethod;
+import statistics.ExecutionTime;
 
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.MutableTreeNode;
+import javax.swing.tree.TreeNode;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Random;
 
 public class GeneticAlgorithm<I extends Individual, P extends Problem<I>> extends Algorithm<I, P> {
@@ -38,20 +44,45 @@ public class GeneticAlgorithm<I extends Individual, P extends Problem<I>> extend
         globalBest = population.evaluate();
 //        I elite = globalBest;
         fireIterationEnded(new AlgorithmEvent(this));
+        long sumDuration = 0;
+        long selectionTimeSum = 0, recombinationTimeSum = 0, mutationTimeSum = 0, evaluationTimeSum = 0;
 
         while (t < maxIterations && !stopped) {
+            Instant start = Instant.now();
             Population<I, P> populationAux = selection.run(population);
-            // replace last with elite
+            selectionTimeSum += Duration.between(start, Instant.now()).toNanos();
+
+            Instant operationStart = Instant.now();
             recombination.run(populationAux);
+            recombinationTimeSum += Duration.between(operationStart, Instant.now()).toNanos();
+
+            operationStart = Instant.now();
             mutation.run(populationAux);
+            mutationTimeSum += Duration.between(operationStart, Instant.now()).toNanos();
             population = populationAux;
 
+            operationStart = Instant.now();
             I bestInGen = population.evaluate();
+            evaluationTimeSum += Duration.between(operationStart, Instant.now()).toNanos();
+
             computeBestInRun(bestInGen);
             t++;
+            Instant finish = Instant.now();
+            sumDuration += Duration.between(start, finish).toNanos();;
             fireIterationEnded(new AlgorithmEvent(this));
+
         }
+
+        ExecutionTime.getInstance().getRoot().add(new DefaultMutableTreeNode("Average Time per iteration: " + (double) sumDuration / maxIterations / 1000000 + "ms"));
+        DefaultMutableTreeNode breakdown = new DefaultMutableTreeNode("Time Breakdown");
+        breakdown.add(new DefaultMutableTreeNode("Selection Time Average: " + (double) selectionTimeSum / maxIterations / 1000000 + "ms"));
+        breakdown.add(new DefaultMutableTreeNode("Recombination Time Average: " + (double) recombinationTimeSum / maxIterations / 1000000 + "ms"));
+        breakdown.add(new DefaultMutableTreeNode("Mutation Time Average: " + (double) mutationTimeSum / maxIterations / 1000000 + "ms"));
+        breakdown.add(new DefaultMutableTreeNode("Evaluation Time Average: " + (double) evaluationTimeSum / maxIterations / 1000000 + "ms"));
+        ExecutionTime.getInstance().getRoot().add(breakdown);
+
         fireRunEnded(new AlgorithmEvent(this));
+
         return globalBest;
     }
 
