@@ -18,6 +18,10 @@ public class MutationInsert<I extends IntVectorIndividual, P extends Problem<I>>
             int aux = ind.getGene(i + 1);
             ind.setGene(i + 1, ind.getGene(i));
             ind.setGene(i, aux);
+
+            aux = ind.getRotation(i+1);
+            ind.setRotation(i + 1, ind.getRotation(i));
+            ind.setRotation(i, aux);
         }
 
     }

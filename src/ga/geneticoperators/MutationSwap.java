@@ -19,6 +19,10 @@ public class MutationSwap<I extends IntVectorIndividual, P extends Problem<I>> e
         int aux = ind.getGene(cuts[0]);
         ind.setGene(cuts[0], ind.getGene(cuts[1]));
         ind.setGene(cuts[1], aux);
+
+        aux = ind.getRotation(cuts[0]);
+        ind.setRotation(cuts[0], ind.getRotation(cuts[1]));
+        ind.setRotation(cuts[1], aux);
     }
 
     @Override

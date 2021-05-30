@@ -16,7 +16,7 @@ public class SolutionGrid extends JPanel {
     private static final double BRIGHTNESS_THRESHOLD = 210;
     private static final int SQUARE_WIDTH = 16;
     private static final int SQUARE_HEIGHT = 16;
-    private final static Color BACKGROUND_COLOR = new Color(150, 150, 150);
+    private final static Color BACKGROUND_COLOR = new Color(240, 240, 240);
     private static final Color WASTE_COLOR = new Color(100, 100, 100);
 
     private StockingProblemIndividual individual;
@@ -67,6 +67,7 @@ public class SolutionGrid extends JPanel {
             for (int j = 0; j < this.solution[i].size(); j++) {
                 if (this.solution[i].get(j) != 0) {
                     Color c = colorsMappedByItem.get(this.solution[i].get(j));
+                    if (c == null) System.err.println("No color mapped for this item. (SHOULDN'T HAPPEN)");
                     g.setColor(c);
                     g.fillRect(x, y, SQUARE_WIDTH, SQUARE_HEIGHT);
                     g.setColor(getContrastColor(c));

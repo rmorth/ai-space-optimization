@@ -16,18 +16,22 @@ public class RecombinationCycle<I extends IntVectorIndividual, P extends Problem
 
     @Override
     public void recombine(I ind1, I ind2) {
+        // Code is messy and needs refactoring, which would lead to slightly better performance
         // https://github.com/jfinkels/jmona/blob/master/jmona-examples/src/main/java/jmona/example/tsp/crossover/CycleCrossoverFunction.java
         final int size = ind1.getNumGenes();
 
         final ArrayList<Integer> cycleIndices = new ArrayList<>();
         final int[] child1 = new int[size];
         final int[] child2 = new int[size];
+        final int[] child1Rotations = new int[size];
+        final int[] child2Rotations = new int[size];
 
         int indexParent1 = GeneticAlgorithm.random.nextInt(size-1); // guarantee change
 
         cycleIndices.add(indexParent1); // beginning of the cycle
         int itemParent2 = ind2.getGene(indexParent1);
         indexParent1 = ind1.getIndexof(itemParent2);
+
 
         // Until cycle is complete
         while (indexParent1 != cycleIndices.get(0)) {
@@ -36,24 +40,30 @@ public class RecombinationCycle<I extends IntVectorIndividual, P extends Problem
             indexParent1 = ind1.getIndexof(itemParent2);
         }
 
-        // TODO: Look into optmising this (looks like we might be able to do it without child1 & child2
         for (int i = 0; i < size; i++) {
             if (cycleIndices.contains(i)) {
                 child1[i] = ind2.getGene(i);
                 child2[i] = ind1.getGene(i);
+
+                child1Rotations[i] = ind2.getRotation(i);
+                child2Rotations[i] = ind1.getRotation(i);
             } else {
                 child1[i] = ind1.getGene(i);
                 child2[i] = ind2.getGene(i);
+
+                child1Rotations[i] = ind1.getRotation(i);
+                child2Rotations[i] = ind2.getRotation(i);
             }
         }
 
-        replace(ind1, child1, size);
-        replace(ind2, child2, size);
+        replace(ind1, child1, child1Rotations, size);
+        replace(ind2, child2, child2Rotations, size);
     }
 
-    private void replace(I parent, int[] child, int size) {
+    private void replace(I parent, int[] child, int[] childRotations, int size) {
         for (int i = 0; i < size; i++) {
-            parent.setGene(i, child[i]);
+            parent.setGene(i, child[i]);;
+            parent.setRotation(i, childRotations[i]);
         }
     }
 

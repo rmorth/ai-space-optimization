@@ -8,16 +8,20 @@ public abstract class IntVectorIndividual<P extends Problem, I extends IntVector
     //TODO this class might require the definition of additional methods and/or attributes
 
     protected int[] genome;
+    protected int[] rotations;
 
     public IntVectorIndividual(P problem, int size) {
         super(problem);
         genome = new int[size];
+        rotations = new int[size];
       }
 
     public IntVectorIndividual(IntVectorIndividual<P, I> original) {
         super(original);
         this.genome = new int[original.genome.length];
         System.arraycopy(original.genome, 0, genome, 0, genome.length);
+        this.rotations = new int[original.rotations.length];
+        System.arraycopy(original.rotations, 0, rotations, 0, rotations.length);
     }
 
     @Override
@@ -33,6 +37,7 @@ public abstract class IntVectorIndividual<P extends Problem, I extends IntVector
         return -1;
     }
 
+    // For genetic operators
     public int[] getCuts() {
         int[] pair = new int[2];
         pair[0] = GeneticAlgorithm.random.nextInt(getNumGenes());
@@ -47,10 +52,18 @@ public abstract class IntVectorIndividual<P extends Problem, I extends IntVector
         return pair;
     }
 
-    public ArrayList<Integer> subList(int cut1, int cut2) {
+    public ArrayList<Integer> subGenomeList(int cut1, int cut2) {
         ArrayList<Integer> values = new ArrayList<>();
         for (int i = cut1; i < cut2; i++) {
             values.add(genome[i]);
+        }
+        return values;
+    }
+
+    public ArrayList<Integer> subRotationList(int cut1, int cut2) {
+        ArrayList<Integer> values = new ArrayList<>();
+        for (int i = cut1; i < cut2; i++) {
+            values.add(rotations[i]);
         }
         return values;
     }
@@ -63,6 +76,14 @@ public abstract class IntVectorIndividual<P extends Problem, I extends IntVector
         genome[index] = newValue;
     }
 
+    public int getRotation(int index) {
+        return rotations[index];
+    }
+
+    public void setRotation(int index, int newValue) {
+        rotations[index] = newValue;
+    }
+
     @Override
     public void swapGenes(IntVectorIndividual other, int index) {
         int aux = genome[index];
@@ -72,5 +93,9 @@ public abstract class IntVectorIndividual<P extends Problem, I extends IntVector
 
     public int[] getGenome() {
         return genome;
+    }
+
+    public int[] getRotations() {
+        return rotations;
     }
 }

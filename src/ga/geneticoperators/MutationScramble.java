@@ -22,9 +22,15 @@ public class MutationScramble<I extends IntVectorIndividual, P extends Problem<I
         for (int i = min; i < max; i++) {
             int randomIndex = GeneticAlgorithm.random.nextInt(max - min) + min;
             if (i == randomIndex) continue;
+
+            // TODO: fix this repetition, it's everywhere
             int aux = ind.getGene(i);
             ind.setGene(i, ind.getGene(randomIndex));
             ind.setGene(randomIndex, aux);
+
+            aux = ind.getRotation(i);
+            ind.setRotation(i, ind.getRotation(randomIndex));
+            ind.setRotation(randomIndex, aux);
         }
     }
 

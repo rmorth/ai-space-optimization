@@ -4,6 +4,8 @@ import algorithms.IntVectorIndividual;
 import algorithms.Problem;
 import ga.GeneticAlgorithm;
 
+import java.util.Arrays;
+
 public class MutationInversion<I extends IntVectorIndividual, P extends Problem<I>> extends Mutation<I, P> {
 
     public MutationInversion(double probability) {
@@ -20,10 +22,16 @@ public class MutationInversion<I extends IntVectorIndividual, P extends Problem<
         int last = cuts[0];
 
         for (int i = cuts[0]; i <= cuts[1]; i++) {
-            if (last == j) break;
+            if (last == j || i == j) break;
+
             int aux = ind.getGene(i);
             ind.setGene(i, ind.getGene(j));
             ind.setGene(j, aux);
+
+            aux = ind.getRotation(i);
+            ind.setRotation(i, ind.getRotation(j));
+            ind.setRotation(j, aux);
+
             j--;
             last = i;
         }

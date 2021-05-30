@@ -10,9 +10,13 @@ import statistics.ExecutionTime;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.MutableTreeNode;
 import javax.swing.tree.TreeNode;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.Date;
 import java.util.Random;
+import java.util.TimeZone;
 
 public class GeneticAlgorithm<I extends Individual, P extends Problem<I>> extends Algorithm<I, P> {
 
@@ -38,11 +42,11 @@ public class GeneticAlgorithm<I extends Individual, P extends Problem<I>> extend
     }
 
     public I run(P problem) {
+        Instant startTotal = Instant.now();
+
         t = 0;
         population = new Population<>(populationSize, problem);
-
         globalBest = population.evaluate();
-//        I elite = globalBest;
         fireIterationEnded(new AlgorithmEvent(this));
         long sumDuration = 0;
         long selectionTimeSum = 0, recombinationTimeSum = 0, mutationTimeSum = 0, evaluationTimeSum = 0;
@@ -73,6 +77,9 @@ public class GeneticAlgorithm<I extends Individual, P extends Problem<I>> extend
 
         }
 
+        Instant finishTotal = Instant.now();
+        long totalTime = Duration.between(startTotal, finishTotal).toNanos() / 1000000;
+        ExecutionTime.getInstance().getRoot().add(new DefaultMutableTreeNode("Total Time: " + getFormattedTime(totalTime)));
         ExecutionTime.getInstance().getRoot().add(new DefaultMutableTreeNode("Average Time per iteration: " + (double) sumDuration / maxIterations / 1000000 + "ms"));
         DefaultMutableTreeNode breakdown = new DefaultMutableTreeNode("Time Breakdown");
         breakdown.add(new DefaultMutableTreeNode("Selection Time Average: " + (double) selectionTimeSum / maxIterations / 1000000 + "ms"));
@@ -96,6 +103,15 @@ public class GeneticAlgorithm<I extends Individual, P extends Problem<I>> extend
         return population.getAverageFitness();
     }
 
+    private String getFormattedTime(long durationInMillis) {
+        long millis = durationInMillis % 1000;
+        long second = (durationInMillis / 1000) % 60;
+        long minute = (durationInMillis / (1000 * 60)) % 60;
+        long hour = (durationInMillis / (1000 * 60 * 60)) % 24;
+        long days = (durationInMillis /(1000*60*60*24));
+
+        return String.format("%02dd:%02dh:%02dm:%02ds:%04dms", days, hour, minute, second, millis);
+    }
 
     @Override
     public String toString() {

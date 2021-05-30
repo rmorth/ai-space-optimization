@@ -2,9 +2,9 @@ package ga.geneticoperators;
 
 import algorithms.IntVectorIndividual;
 import algorithms.Problem;
-import ga.GeneticAlgorithm;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class RecombinationOrder<I extends IntVectorIndividual, P extends Problem<I>> extends Recombination<I, P> {
@@ -21,26 +21,17 @@ public class RecombinationOrder<I extends IntVectorIndividual, P extends Problem
         final ArrayList<Integer> child1 = new ArrayList<>(numGenes);
         final ArrayList<Integer> child2 = new ArrayList<>(numGenes);
 
-        int lim2, lim1 = GeneticAlgorithm.random.nextInt(numGenes);
-        do {
-            lim2 = GeneticAlgorithm.random.nextInt(numGenes);
-        }while(lim1 == lim2);
+        int[] cuts = ind1.getCuts();
 
-        if (lim1 > lim2) {
-            int aux = lim1;
-            lim1 = lim2;
-            lim2 = aux;
-        }
-
-        child1.addAll(ind1.subList(lim1, lim2 + 1));
-        child2.addAll(ind2.subList(lim1, lim2 + 1));
+        child1.addAll(ind1.subGenomeList(cuts[0], cuts[1] + 1));
+        child2.addAll(ind2.subGenomeList(cuts[0], cuts[1] + 1));
 
         int currentItemIndex = 0;
         int currentItemInInd1 = 0;
         int currentItemInInd2 = 0;
 
         for (int i = 0; i < numGenes; i++) {
-            currentItemIndex = (lim2 + i) % numGenes;
+            currentItemIndex = (cuts[1] + i) % numGenes;
 
             currentItemInInd1 = ind1.getGene(currentItemIndex);
             currentItemInInd2 = ind2.getGene(currentItemIndex);
@@ -54,13 +45,14 @@ public class RecombinationOrder<I extends IntVectorIndividual, P extends Problem
             }
         }
 
-        Collections.rotate(child1, lim1);
-        Collections.rotate(child2, lim1);
-        replace(ind1, child1, numGenes);
-        replace(ind2, child2, numGenes);
+
+        Collections.rotate(child1, cuts[0]);
+        Collections.rotate(child2, cuts[0]);
+        replaceGenome(ind1, child1, numGenes);
+        replaceGenome(ind2, child2, numGenes);
     }
 
-    private void replace(I parent, ArrayList<Integer> child, int size) {
+    private void replaceGenome(I parent, ArrayList<Integer> child, int size) {
         for (int i = 0; i < size; i++) {
             parent.setGene(i, (Integer) child.get(i));
         }

@@ -3,15 +3,11 @@ package stockingproblem;
 import algorithms.IntVectorIndividual;
 import ga.GeneticAlgorithm;
 
-import java.time.Duration;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class StockingProblemIndividual extends IntVectorIndividual<StockingProblem, StockingProblemIndividual> {
-    // testar cruzamento, mut: 0
-    // implementar rotação: (array separada com a mesma dimensão que a solution, 1:1)
     private List<Integer>[] solution;
     private int cuts;
     private int waste;
@@ -26,6 +22,7 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         super(problem, size);
         for (int i = 0; i < genome.length; i++) {
             genome[i] = i;
+            rotations[i] = GeneticAlgorithm.random.nextInt(4);
         }
         shuffleGenome(size);
     }
@@ -60,14 +57,16 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
             solution[i] = new ArrayList<>();
         }
 
-        for (int k : genome) {
+        for (int genomeId = 0, genomeLength = genome.length; genomeId < genomeLength; genomeId++) {
+            int k = genome[genomeId];
             boolean placed = false;
             var item = problem.getItems().get(k);
+
             // FIXME: using materialWidth
             for (int j = 0; j < problem.getMaterialWidth(); j++) {
                 for (int i = 0; i < problem.getMaterialHeight(); i++) {
-                    if (checkValidPlacement(item, i, j)) {
-                        place(item, i, j);
+                    if (checkValidPlacement(item, i, j, rotations[genomeId])) {
+                        place(item, i, j, rotations[genomeId]);
                         placed = true;
                         break;
                     }
@@ -85,7 +84,6 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         fitness = cuts * WEIGHT_PENALTY_CUTS + waste * WEIGHT_PENALTY_WASTE + auxMaxColumns * WEIGHT_PENALTY_WIDTH;
         return fitness;
     }
-
 
     private int calculateCuts() {
         int vcuts = 0; // cortes verticais (não na vertical)
@@ -156,8 +154,9 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         }
     }
 
-    private void place(Item item, int lineIndex, int columnIndex) {
-        int[][] itemMatrix = item.getMatrix();
+    private void place(Item item, int lineIndex, int columnIndex, int rotation) {
+        int[][] itemMatrix = item.getMatrix(rotation);
+        if (itemMatrix.length > problem.getMaterialHeight()) itemMatrix = item.getMatrix(0);
         for (int i = 0; i < itemMatrix.length; i++) {
             for (int j = 0; j < itemMatrix[i].length; j++) {
                 if (itemMatrix[i][j] != 0) {
@@ -167,8 +166,10 @@ public class StockingProblemIndividual extends IntVectorIndividual<StockingProbl
         }
     }
 
-    private boolean checkValidPlacement(Item item, int lineIndex, int columnIndex) {
-        int[][] itemMatrix = item.getMatrix();
+    private boolean checkValidPlacement(Item item, int lineIndex, int columnIndex, int rotation) {
+        int[][] itemMatrix = item.getMatrix(rotation);
+        if (itemMatrix.length > problem.getMaterialHeight()) itemMatrix = item.getMatrix(0);
+
         for (int i = 0; i < itemMatrix.length; i++) {
             for (int j = 0; j < itemMatrix[i].length; j++) {
                 if (itemMatrix[i][j] != 0) {
