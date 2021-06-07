@@ -51,10 +51,10 @@ public class StockingProblemExperimentsFactory extends ExperimentsFactory {
             case "pmx":
                 recombination = new RecombinationPartialMapped<>(recombinationProbability);
                 break;
-            case "recombination2": //TODO
+            case "ox": //TODO
                 recombination = new RecombinationOrder<>(recombinationProbability);
                 break;
-            case "recombination3": //TODO
+            case "cx": //TODO
                 recombination = new RecombinationCycle<>(recombinationProbability);
                 break;
         }
@@ -71,6 +71,9 @@ public class StockingProblemExperimentsFactory extends ExperimentsFactory {
                 break;
             case "inversion": //TODO
                 mutation = new MutationInversion<>(mutationProbability);
+                break;
+            case "scramble":
+                mutation = new MutationScramble<>(mutationProbability);
                 break;
         }
 

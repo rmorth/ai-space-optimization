@@ -23,8 +23,6 @@ public class RecombinationCycle<I extends IntVectorIndividual, P extends Problem
         final ArrayList<Integer> cycleIndices = new ArrayList<>();
         final int[] child1 = new int[size];
         final int[] child2 = new int[size];
-        final int[] child1Rotations = new int[size];
-        final int[] child2Rotations = new int[size];
 
         int indexParent1 = GeneticAlgorithm.random.nextInt(size-1); // guarantee change
 
@@ -44,26 +42,19 @@ public class RecombinationCycle<I extends IntVectorIndividual, P extends Problem
             if (cycleIndices.contains(i)) {
                 child1[i] = ind2.getGene(i);
                 child2[i] = ind1.getGene(i);
-
-                child1Rotations[i] = ind2.getRotation(i);
-                child2Rotations[i] = ind1.getRotation(i);
             } else {
                 child1[i] = ind1.getGene(i);
                 child2[i] = ind2.getGene(i);
-
-                child1Rotations[i] = ind1.getRotation(i);
-                child2Rotations[i] = ind2.getRotation(i);
             }
         }
 
-        replace(ind1, child1, child1Rotations, size);
-        replace(ind2, child2, child2Rotations, size);
+        replace(ind1, child1, size);
+        replace(ind2, child2, size);
     }
 
-    private void replace(I parent, int[] child, int[] childRotations, int size) {
+    private void replace(I parent, int[] child, int size) {
         for (int i = 0; i < size; i++) {
             parent.setGene(i, child[i]);;
-            parent.setRotation(i, childRotations[i]);
         }
     }
 

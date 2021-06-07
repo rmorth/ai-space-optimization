@@ -79,14 +79,16 @@ public class GeneticAlgorithm<I extends Individual, P extends Problem<I>> extend
 
         Instant finishTotal = Instant.now();
         long totalTime = Duration.between(startTotal, finishTotal).toNanos() / 1000000;
-        ExecutionTime.getInstance().getRoot().add(new DefaultMutableTreeNode("Total Time: " + getFormattedTime(totalTime)));
-        ExecutionTime.getInstance().getRoot().add(new DefaultMutableTreeNode("Average Time per iteration: " + (double) sumDuration / maxIterations / 1000000 + "ms"));
-        DefaultMutableTreeNode breakdown = new DefaultMutableTreeNode("Time Breakdown");
-        breakdown.add(new DefaultMutableTreeNode("Selection Time Average: " + (double) selectionTimeSum / maxIterations / 1000000 + "ms"));
-        breakdown.add(new DefaultMutableTreeNode("Recombination Time Average: " + (double) recombinationTimeSum / maxIterations / 1000000 + "ms"));
-        breakdown.add(new DefaultMutableTreeNode("Mutation Time Average: " + (double) mutationTimeSum / maxIterations / 1000000 + "ms"));
-        breakdown.add(new DefaultMutableTreeNode("Evaluation Time Average: " + (double) evaluationTimeSum / maxIterations / 1000000 + "ms"));
-        ExecutionTime.getInstance().getRoot().add(breakdown);
+        if (ExecutionTime.getInstance().getRoot() != null) { // Experiments don't use the UI, so it doesn't initialise the root; Experiments => no time analysis
+            ExecutionTime.getInstance().getRoot().add(new DefaultMutableTreeNode("Total Time: " + getFormattedTime(totalTime)));
+            ExecutionTime.getInstance().getRoot().add(new DefaultMutableTreeNode("Average Time per iteration: " + (double) sumDuration / maxIterations / 1000000 + "ms"));
+            DefaultMutableTreeNode breakdown = new DefaultMutableTreeNode("Time Breakdown");
+            breakdown.add(new DefaultMutableTreeNode("Selection Time Average: " + (double) selectionTimeSum / maxIterations / 1000000 + "ms"));
+            breakdown.add(new DefaultMutableTreeNode("Recombination Time Average: " + (double) recombinationTimeSum / maxIterations / 1000000 + "ms"));
+            breakdown.add(new DefaultMutableTreeNode("Mutation Time Average: " + (double) mutationTimeSum / maxIterations / 1000000 + "ms"));
+            breakdown.add(new DefaultMutableTreeNode("Evaluation Time Average: " + (double) evaluationTimeSum / maxIterations / 1000000 + "ms"));
+            ExecutionTime.getInstance().getRoot().add(breakdown);
+        }
 
         fireRunEnded(new AlgorithmEvent(this));
 

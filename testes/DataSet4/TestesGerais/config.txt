@@ -1,0 +1,38 @@
+Runs: 50
+
+Population_size: 50, 100, 200, 400
+
+Max_generations: 25, 50, 100, 200
+
+//--------------------------------
+
+Selection: tournament
+
+Tournament_size: 4
+
+//--------------------------------
+
+Recombination: uniform
+
+Recombination_probability: 0.8
+
+//--------------------------------
+
+Mutation: binary
+
+Mutation_probability: 0.025
+
+//--------------------------------
+
+Probability_of_1s: 0.05
+
+Fitness_type: 0
+
+//--------------------------------
+
+Problem_file: ./DataSet1.txt
+
+//--------------------------------
+
+Statistic: BestIndividual
+Statistic: BestAverage
