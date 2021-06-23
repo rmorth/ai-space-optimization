@@ -1,0 +1,5 @@
+Population size:	Max generations:	Selection:	Recombination:	Recombination prob.:	Mutation:	Mutation prob.:		Fitness:	Seed:
+180	400	Tournament(6)	Order	0.8	Swap	0.1		73.39999999999999	9
+90	800	Tournament(6)	Order	0.8	Swap	0.1		72.0	41
+400	180	Tournament(6)	Order	0.8	Swap	0.1		73.2	39
+360	200	Tournament(6)	Order	0.8	Swap	0.1		73.0	1

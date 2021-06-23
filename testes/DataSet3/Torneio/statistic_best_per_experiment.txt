@@ -1,0 +1,105 @@
+
+
+Population size:180
+Max generations:400
+Selection:Tournament(6)
+Recombination:Order
+Recombination prob.: 0.8
+Mutation:Swap
+Mutation prob.: 0.1
+genome: [38, 18, 43, 7, 42, 12, 41, 16, 49, 30, 15, 34, 36, 25, 23, 37, 19, 27, 8, 45, 22, 33, 47, 46, 20, 9, 35, 26, 40, 21, 32, 10, 39, 24, 28, 51, 4, 44, 48, 14, 29, 6, 50, 11, 1, 17, 3, 5, 0, 2, 13, 31]
+fitness: 73.39999999999999
+cuts: 293
+waste: 15
+
+S S j m r r x C C E p i i Z Z X X T   I I I h h h h h g g a a a n n n c   s   O O O f 
+S j j m r r x x x E p i i e Z X X T T T I b b   h h h g g g a a n n n c   s s O O y f 
+S S m m A r D D x E p p e e Z Z X X t T T b b v u   U   g g g a a c c c c s s y y y f 
+V B m m q q q q q q q p e l l   X X t N b b v v u u U K g g g a a o o c z z w y R R f 
+m m m m M M   q P P e e e L l l l t t N b b v v u u U K K K a a Y Y o z z w w w R R d 
+H H H H M Q   Q P P e e L L L l l l l N N b W J J J U U   a a o Y Y o   z z w d R d d 
+G G G G M Q Q Q P k k k k k k k k W W W W W W J F F F U a a   o o o o     d d d d d d 
+
+
+Population size:180
+Max generations:400
+Selection:Tournament(8)
+Recombination:Order
+Recombination prob.: 0.8
+Mutation:Swap
+Mutation prob.: 0.1
+genome: [22, 26, 44, 14, 20, 38, 42, 16, 27, 43, 18, 33, 29, 31, 37, 24, 23, 17, 51, 7, 40, 45, 19, 25, 41, 8, 36, 39, 30, 47, 2, 10, 6, 46, 50, 11, 49, 48, 35, 1, 28, 21, 13, 3, 12, 32, 5, 0, 15, 34, 9, 4]
+fitness: 72.0
+cuts: 286
+waste: 15
+
+W W a a a s s m m m m r r     X X h h R R v v v l o o w Z Z u u   x x e i i c g g 
+f W O a a s s m m Y Y r r X X X X h h R R R v v l o w w w Z u u   x e e i i c g g g 
+f W O O a a s m m Y Y A r X X b b h h   t t t l l o   w o Z Z u x x e G c c c c g g g 
+f W O O a a j m q q q q q q q b b h I I I d t l l o o o o T n n e e e G N N c   g g g 
+f W B a a j j m Q Q Q q S S b b   h d I d d l l z z L D T T n n e e y G J N M M M E 
+C W a a U U U U Q V Q p p S b b d d d d d d l z z L L D T K n n y y y G J N P P M E 
+C a a U U H H H H p p p S S   b k k k k k k k k z z L T T K K K y F F F J J P P P E 
+
+
+Population size:180
+Max generations:400
+Selection:Tournament(4)
+Recombination:Order
+Recombination prob.: 0.8
+Mutation:Swap
+Mutation prob.: 0.1
+genome: [16, 25, 28, 27, 32, 11, 44, 45, 40, 50, 42, 20, 46, 36, 43, 5, 41, 23, 33, 17, 39, 12, 4, 18, 31, 29, 2, 30, 9, 48, 37, 7, 1, 26, 22, 49, 35, 38, 24, 47, 21, 19, 51, 15, 0, 8, 14, 13, 34, 10, 3, 6]
+fitness: 66.4
+cuts: 283
+waste: 8
+
+Q Q t t t b b M V y y o o u u u J X X   j R R K f d e e Y Y v v   l W W W W W W i i 
+Q E E E t b b M M M y A o u u F J X X j j R R K f d e e Y Y v v l l W   O O O z i i 
+Q Q Z c b b g g g o y y o C C F J J X X h R K K f d d e e e v l l a T T O O z z z m 
+Z Z Z c b b g g g o o o o U U F p p X X h n n n f d     w e e l l a a T T T z a z m 
+Z c c c c b L g g g U U U U p p p D D h h n n n N d d w w w I l x x a a   T a a m m 
+B s s c r r L L g g q k k k k k k k k h h S   S N d d d w I I l x P P a a a a a m m 
+s s s r r r L q q q q q q q H H H H   h h S S S N N G G G G I x x P P P a a m m m m 
+
+
+Population size:180
+Max generations:400
+Selection:Tournament(2)
+Recombination:Order
+Recombination prob.: 0.8
+Mutation:Swap
+Mutation prob.: 0.1
+genome: [3, 48, 28, 27, 19, 22, 23, 21, 36, 17, 6, 42, 29, 16, 43, 41, 40, 32, 10, 14, 38, 1, 45, 12, 34, 18, 51, 25, 49, 35, 26, 39, 13, 15, 0, 9, 2, 50, 8, 33, 20, 5, 7, 37, 30, 44, 24, 31, 11, 47, 46, 4]
+fitness: 85.8
+cuts: 305
+waste: 29
+
+D D A b b G G G G X X q q q q q q q i i g g m m m m m Z Z a L L L P     h h h E E E v v 
+V w b b b b b X X X X M M M q I r r i i g g g   m m m N Z a a L P P   a h h h h h   v v 
+w w w T T b b X X C C     M I I r r O o o g g g j j m N Z Z a a P P a a U F l l l l v u u 
+B w c   T T T k k k k k k k k I d r O O o g g g j   m N N Y Y a a a a a U F e e l l l u u 
+Q Q c K K K T p p p R     d   d d o O O o t S S z   z x x Y Y   a a y y U F   e e e l l u 
+Q c c c c K p p W R R d d d d d d o o o o t S   z z z x n n n     J   y U U   s s e e 
+Q Q c W W W W W W R R H H H H f f f f   t t S S   z x x n n n J J J   y y U s s s e e 
+
+
+Population size:180
+Max generations:400
+Selection:Tournament(10)
+Recombination:Order
+Recombination prob.: 0.8
+Mutation:Swap
+Mutation prob.: 0.1
+genome: [28, 45, 21, 25, 33, 48, 36, 51, 14, 20, 10, 4, 26, 19, 22, 46, 50, 27, 24, 43, 9, 42, 13, 44, 35, 8, 12, 16, 38, 18, 40, 17, 3, 39, 47, 30, 0, 32, 31, 2, 49, 7, 6, 5, 41, 23, 37, 1, 29, 11, 15, 34]
+fitness: 78.60000000000001
+cuts: 294
+waste: 22
+
+V c h h h h h O O O C C a a   y y J J J N s s s n n n m S S e e f f f f   l l l l 
+c c c c h h h O O U a a a a a   y J b b N s s M n n n m   S x e e e H H H H   l l l 
+D c K K w z z j j U a a T T a a y y b b N N q M M M m m S S x x x e e G G G G X X l l 
+D c K w w w z z j U a B T     a a b b q q q q q q q m m o o o o x e e g g X X X X L 
+t t K Z w z z Y Y U U T T u u u a b b     I Q Q m m m m o R R o F   g g g X X     L L d 
+t Z Z Z E E E Y Y A U T   u u W i i b r r I I Q v v P P P R R o F g g g g p p   d L d d 
+t Z k k k k k k k k W W W W W W i i r r r I Q Q v v v P P R o o F g g p p p d d d d d d 

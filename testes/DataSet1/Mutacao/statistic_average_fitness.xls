@@ -1,0 +1,29 @@
+Population size:	Max generations:	Selection:	Recombination:	Recombination prob.:	Mutation:	Mutation prob.:		Average:	StdDev:
+150	50	Tournament(4)	PMX	0.8	Swap	"0,01"		58.622	3.657173225
+150	50	Tournament(4)	PMX	0.8		"0,025"		58.05	3.726888783
+150	50	Tournament(4)	PMX	0.8		"0,05"		56.708	3.471417002
+150	50	Tournament(4)	PMX	0.8		"0,075"		56.984	3.54989352
+150	50	Tournament(4)	PMX	0.8		"0,1"		56.746	3.44993971
+150	50	Tournament(4)	PMX	0.8		"0,125"		56.036	3.130288166
+150	50	Tournament(4)	PMX	0.8		"0,15"		56.722	3.414984041
+150	50	Tournament(4)	PMX	0.8	Inversion	"0,01"		58.666	3.679326569
+150	50	Tournament(4)	PMX	0.8		"0,025"		58.756	3.610770555
+150	50	Tournament(4)	PMX	0.8		"0,05"		58.204	3.748864361
+150	50	Tournament(4)	PMX	0.8		"0,075"		58.112	3.67758834
+150	50	Tournament(4)	PMX	0.8		"0,1"		57.086	3.599167126
+150	50	Tournament(4)	PMX	0.8		"0,125"		56.916	3.492126
+150	50	Tournament(4)	PMX	0.8		"0,15"		56.916	3.532781341
+150	50	Tournament(4)	PMX	0.8	Scramble	"0,01"		58.618	3.677373519
+150	50	Tournament(4)	PMX	0.8		"0,025"		58.618	3.659928415
+150	50	Tournament(4)	PMX	0.8		"0,05"		57.224	3.593358318
+150	50	Tournament(4)	PMX	0.8		"0,075"		56.96	3.551281459
+150	50	Tournament(4)	PMX	0.8		"0,1"		56.754	3.445647109
+150	50	Tournament(4)	PMX	0.8		"0,125"		56.794	3.481287693
+150	50	Tournament(4)	PMX	0.8		"0,15"		56.312	3.264330866
+150	50	Tournament(4)	PMX	0.8	Insert	"0,01"		57.908	3.738600808
+150	50	Tournament(4)	PMX	0.8		"0,025"		57.382	3.605312192
+150	50	Tournament(4)	PMX	0.8		"0,05"		56.692	3.493584978
+150	50	Tournament(4)	PMX	0.8		"0,075"		57.35	3.642869748
+150	50	Tournament(4)	PMX	0.8		"0,1"		55.886	3.042039447
+150	50	Tournament(4)	PMX	0.8		"0,125"		55.744	2.911024562
+150	50	Tournament(4)	PMX	0.8		"0,15"		56.146	3.20357363

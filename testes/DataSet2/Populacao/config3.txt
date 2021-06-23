@@ -1,0 +1,32 @@
+Runs: 50
+
+Population_size: 360
+
+Max_generations: 200
+
+//--------------------------------
+
+Selection: tournament
+
+Tournament_size: 4
+
+//--------------------------------
+
+Recombination: cx
+
+Recombination_probability: 0.7
+
+//--------------------------------
+
+Mutation: swap
+
+Mutation_probability: 0.1
+
+//--------------------------------
+
+Problem_file: ./Problema2.txt
+
+//--------------------------------
+
+Statistic: BestIndividual
+Statistic: BestAverage

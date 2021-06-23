@@ -1,0 +1,5 @@
+Population size:	Max generations:	Selection:	Recombination:	Recombination prob.:	Mutation:	Mutation prob.:		Average:	StdDev:
+pop 180	ger 400	Tournament(4)	Cycle	0.7	Swap	0.1		74.688	3.583665163
+pop 360	ger 200	Tournament(4)	Cycle	0.7	Swap	0.1		74.92	3.861864835
+pop 400	ger 180	Tournament(4)	Cycle	0.7	Swap	0.1		75.27	3.039292681
+pop 90	ger 800	Tournament(4)	Cycle	0.7	Swap	0.1		77.33	4.509556519

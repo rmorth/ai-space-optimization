@@ -1,0 +1,96 @@
+
+
+Population size:150
+Max generations:50
+Selection:Tournament(4)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Insert
+Mutation prob.: 0.1
+genome: [41, 29, 32, 42, 39, 10, 20, 11, 16, 25, 37, 13, 27, 34, 45, 8, 30, 7, 36, 51, 5, 28, 44, 3, 26, 49, 22, 31, 38, 40, 21, 48, 47, 33, 46, 35, 9, 15, 2, 17, 1, 50, 23, 14, 0, 43, 19, 12, 18, 24, 6, 4]
+fitness: 54.2
+cuts: 251
+waste: 1
+
+p p p K N N g l l t t t k k k k x x x o o o v v v v J P P G r r S 
+p p p K N N g l l t t t k k k k x x x o o o v v v v J P P G r r S 
+p p p K H H g l l t t t z z z z x x x o o o v v v v J y y y r r S 
+d d d d d d g l l t t t z z z z x x x h h h h h h h A y y y r r S 
+q q q q q U g b b F F e z z z z x x x R R R R u u u u y y y r r E 
+q q q q q U g b b D C e z z z z f f f f f f B u u u u y y y M M E 
+n n n Q I U g b b a a e c c c c c c V V V V V u u u u y y y M M 
+n n n Q I U Z Z Z a a e s s s s s m m m w w w w j j j j O O Y Y Y 
+n n n Q I U Z Z Z a a e s s s s s m m m w w w w j j j j O O Y Y Y 
+L L L Q i i i i i i i e W W W W W m m m w w w w X X X X X T T T T 
+
+
+Population size:50
+Max generations:150
+Selection:Tournament(4)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Insert
+Mutation prob.: 0.1
+genome: [46, 31, 43, 44, 12, 42, 29, 1, 37, 35, 18, 27, 21, 17, 40, 41, 16, 8, 5, 51, 36, 45, 47, 25, 49, 34, 30, 23, 2, 50, 14, 15, 22, 20, 28, 39, 7, 24, 32, 11, 0, 13, 38, 19, 48, 9, 33, 10, 26, 3, 4, 6]
+fitness: 54.2
+cuts: 251
+waste: 1
+
+u u u B l l q q d V p p p z z z z v v v v Y Y X W n n n m m m K h 
+u u u I l l q q d V p p p z z z z v v v v Y Y X W n n n m m m K h 
+u u u I l l q q d V p p p z z z z v v v v Y Y X W n n n m m m K h 
+u u u I l l q q d V F O O z z z z D x x x x x X W g g g g g g g h 
+f r r r r r q q d V F O O k k t t t x x x x x X W J J J T w w w h 
+f r r r r r j j d R R R R k k t t t x x x x x y y y y y T w w w h 
+f s s s s s j j S o o o Q k k t t t P P H N N y y y y y T w w w h 
+f s s s s s j j S o o o Q k k t t t P P H N N y y y y y T w w w E 
+f M M b b b j j S o o o Q Z Z Z i i i i i i i c c c c c c a a a E 
+f M M b b b C A S L L L Q Z Z Z e e e e e e U U U U U G G a a a 
+
+
+Population size:100
+Max generations:75
+Selection:Tournament(4)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Insert
+Mutation prob.: 0.1
+genome: [14, 32, 36, 40, 45, 15, 31, 12, 44, 51, 30, 46, 23, 28, 43, 19, 20, 7, 26, 18, 4, 38, 35, 9, 41, 29, 2, 48, 17, 21, 22, 10, 33, 49, 47, 3, 37, 16, 42, 11, 34, 50, 13, 8, 39, 24, 1, 25, 27, 0, 6, 5]
+fitness: 54.2
+cuts: 251
+waste: 1
+
+O O P P s s s s s u u u T S S S S R R R R W v v v v q q y y y y y 
+O O P P s s s s s u u u T m m m p p p K I W v v v v q q y y y y y 
+g g g g g g g E E u u u T m m m p p p K I W v v v v q q y y y y y 
+k k t t t z z z z u u u T m m m p p p K I W l l l l q q n n n b b 
+k k t t t z z z z c c c c c c d d d d d d W l l l l q q n n n b b 
+k k t t t z z z z r r r r r j j j j N N V h h h h h h h n n n b b 
+k k t t t z z z z r r r r r j j j j N N V x x x x x i i i i i i i 
+o o o f f f f f f U U U U U D J w w w w V x x x x x B F Y Y Z Z Z 
+o o o M M e e e e e e H a a a J w w w w V x x x x x A F Y Y Z Z Z 
+o o o M M X X X X X C H a a a J w w w w V Q Q Q Q L L L Y Y G G 
+
+
+Population size:250
+Max generations:30
+Selection:Tournament(4)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Insert
+Mutation prob.: 0.1
+genome: [31, 23, 10, 9, 24, 34, 36, 35, 48, 49, 12, 44, 43, 46, 33, 32, 51, 40, 27, 18, 13, 50, 2, 42, 25, 19, 30, 37, 6, 47, 41, 29, 45, 26, 22, 14, 15, 28, 3, 38, 20, 16, 21, 11, 1, 39, 8, 7, 17, 4, 5, 0]
+fitness: 54.2
+cuts: 251
+waste: 1
+
+f f f f f f C D s s s s s h g z z z z T q q G v v v O O c Q Q Q Q 
+X i i i i i i i s s s s s h g z z z z T q q G v v v O O c V n n n 
+X k k k k w w w w u u u u h g z z z z T q q L v v v P P c V n n n 
+X k k k k w w w w u u u u h g z z z z T q q L v v v P P c V n n n 
+X M M j j w w w w u u u u h g y y y y y q q L B I t t t c V H R E 
+X M M j j x x x r r o o o h g y y y y y l l l l I t t t c V H R E 
+K K K j j x x x r r o o o h g y y y y y l l l l I t t t m m m R A 
+J J J j j x x x r r o o o S S S S W W W W W p p p t t t m m m R 
+Y Y Y N N x x x r r b b b Z Z Z e e e e e e p p p a a a m m m F F 
+Y Y Y N N x x x r r b b b Z Z Z d d d d d d p p p a a a U U U U U 

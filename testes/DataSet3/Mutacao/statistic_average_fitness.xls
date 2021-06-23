@@ -1,0 +1,29 @@
+Population size:	Max generations:	Selection:	Recombination:	Recombination prob.:	Mutation:	Mutation prob.:		Average:	StdDev:
+180	400	Tournament(6)	Cycle	0.9	Insert	"0,01"		90.788	3.672908384
+180	400	Tournament(6)	Cycle	0.9		"0,025"		89.096	3.963683136
+180	400	Tournament(6)	Cycle	0.9		"0,05"		86.26	4.854894438
+180	400	Tournament(6)	Cycle	0.9		"0,075"		86.484	4.273469785
+180	400	Tournament(6)	Cycle	0.9		"0,1"		85.976	3.970620103
+180	400	Tournament(6)	Cycle	0.9		"0,125"		85.556	5.287614207
+180	400	Tournament(6)	Cycle	0.9		"0,15"		84.988	4.554630172
+180	400	Tournament(6)	Cycle	0.9	Swap	"0,01"		88.42	4.13748716
+180	400	Tournament(6)	Cycle	0.9		"0,025"		85.1	4.127032832
+180	400	Tournament(6)	Cycle	0.9		"0,05"		83.768	4.539666948
+180	400	Tournament(6)	Cycle	0.9		"0,075"		83.512	4.174812092
+180	400	Tournament(6)	Cycle	0.9		"0,1"		81.42	4.710711199
+180	400	Tournament(6)	Cycle	0.9		"0,125"		82.6	3.623258202
+180	400	Tournament(6)	Cycle	0.9		"0,15"		81.92	4.598260541
+180	400	Tournament(6)	Cycle	0.9	Scramble	"0,01"		91.164	4.402851803
+180	400	Tournament(6)	Cycle	0.9		"0,025"		87.4	4.199428533
+180	400	Tournament(6)	Cycle	0.9		"0,05"		86.068	4.704994793
+180	400	Tournament(6)	Cycle	0.9		"0,075"		85.556	4.054092254
+180	400	Tournament(6)	Cycle	0.9		"0,1"		84.396	3.839477048
+180	400	Tournament(6)	Cycle	0.9		"0,125"		84.24	4.064873922
+180	400	Tournament(6)	Cycle	0.9		"0,15"		83.888	3.939778674
+180	400	Tournament(6)	Cycle	0.9	Inversion	"0,01"		91.636	4.074837911
+180	400	Tournament(6)	Cycle	0.9		"0,025"		89.548	5.18626031
+180	400	Tournament(6)	Cycle	0.9		"0,05"		88.696	4.269190087
+180	400	Tournament(6)	Cycle	0.9		"0,075"		87.624	3.991118139
+180	400	Tournament(6)	Cycle	0.9		"0,1"		87.308	4.49608007
+180	400	Tournament(6)	Cycle	0.9		"0,125"		87.004	4.519378718
+180	400	Tournament(6)	Cycle	0.9		"0,15"		87.108	3.543604944

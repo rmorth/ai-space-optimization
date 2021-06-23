@@ -1,0 +1,9 @@
+Population size:	Max generations:	Selection:	Recombination:	Recombination prob.:	Mutation:	Mutation prob.:		Average:	StdDev:						
+150	50	2	PMX	0.8	Insert	0.1		58.384	3.599186575						
+150	50	4	PMX	0.8	Insert	0.1		55.886	3.042039447						
+150	50	6	PMX	0.8	Insert	0.1		58.744	3.637975261						
+150	50	8	PMX	0.8	Insert	0.1		58.416	3.672348567						
+150	50	10	PMX	0.8	Insert	0.1		58.678	3.763258694						
+															
+															
+															 

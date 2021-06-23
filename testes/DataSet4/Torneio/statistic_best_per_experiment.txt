@@ -1,0 +1,105 @@
+
+
+Population size:180
+Max generations:200
+Selection:Tournament(4)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Scramble
+Mutation prob.: 0.1
+genome: [27, 5, 13, 25, 21, 2, 23, 17, 8, 22, 12, 9, 26, 24, 3, 20, 16, 4, 14, 7, 1, 11, 6, 19, 10, 15, 18, 0, 28]
+fitness: 60.599999999999994
+cuts: 206
+waste: 23
+
+b b b b b b b Z Z V V B B X X X X X     a Q Q J J J O O S S K K 
+I I   b N N N Z G G V V B B B X X X   W a Q Q Q J J O O S S K K 
+I D F F C N N Z G G Z V V   B     X   W a a Q Q Q J J O O O K K 
+F F F F C   N Z Z Z Z   V V V V V X W W M a Q Q Q J J L L O O c 
+F F H H C N N R R R R R     V V V V W W M       J J L L L L L c c 
+Y Y Y H C C N A A R R R E V V V T W W M M M M J J P P P P L L c c 
+Y Y Y H H C N E E E E E E V V T T W     M   J J U U U U U U U U 
+
+
+Population size:180
+Max generations:200
+Selection:Tournament(6)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Scramble
+Mutation prob.: 0.1
+genome: [22, 25, 10, 23, 21, 15, 14, 12, 13, 0, 9, 16, 5, 20, 4, 2, 27, 17, 24, 8, 19, 7, 11, 26, 6, 1, 18, 28, 3]
+fitness: 59.8
+cuts: 202
+waste: 23
+
+P A W Z Z Z Z V V   H H O O Y Y Y M G G N Q Q J J J R R R R R L L 
+P A W Z I I Z D V V   H O O Y Y Y M G G N Q Q Q J J B B R R R L L 
+P W W F F I Z X C V V H H O O O M M M M N N Q Q Q J J B B B L L 
+P W W F F Z Z X C   V V V V V O O M a a N   Q Q Q J J S S B L L 
+W W K K F F X X C       V V V V a a a E N N     J J   S S c c L 
+W T K K F F X X C C   V V V E E E E E E N N N J J     b c c c 
+T T K K X X X X   C   V V U U U U U U U U   J J b b b b b b b 
+
+
+Population size:180
+Max generations:200
+Selection:Tournament(8)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Scramble
+Mutation prob.: 0.1
+genome: [18, 9, 21, 23, 7, 1, 22, 14, 4, 3, 16, 2, 5, 12, 24, 25, 8, 11, 13, 27, 20, 19, 10, 17, 15, 6, 0, 26, 28]
+fitness: 60.599999999999994
+cuts: 206
+waste: 23
+
+S S   V V W W P P P P   C C Y Y   O   F F G G Z Z Z Z N N N   R 
+S S J J V V W W W C C C C X Y Y O O   F F G G Z L L Z   N N   R 
+J J J J J V V W W W W T T X Y Y O Q Q   F F M Z L L L L L N R R 
+J J A A J J V V V V V T X X O O O Q Q Q F F M Z Z   L L N N R R 
+J H H B   J J   V V V V X X O O K K Q Q Q M M M M a a c c N R R 
+D I H B B B J V V V X X X X E   K K Q Q Q b M a a a c c c N 
+I I H H   B B V V E E E E E E   K K b b b b b b b U U U U U U U U 
+
+
+Population size:180
+Max generations:200
+Selection:Tournament(2)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Scramble
+Mutation prob.: 0.1
+genome: [4, 3, 23, 27, 17, 5, 28, 16, 12, 1, 24, 9, 11, 25, 10, 21, 22, 18, 20, 13, 15, 26, 7, 0, 14, 8, 19, 2, 6]
+fitness: 67.60000000000001
+cuts: 216
+waste: 30
+
+E X X X X c H H F F Q Q O O   J J J G G   Z Z Z Z V V         C C P 
+E X X S S c c H F F Q Q Q O O O J J G G   Z W W Z   V V C C C C   P 
+E X X S S c c H H F F Q Q Q M O O J J L L Z   W W W   V V         P 
+E X b b b b b b b F F Q Q Q M O O J J L L Z Z   W W W W V V V V V P 
+E X R R R b B B A A Y Y M M M M J J L L K K N N N N N N     V V V V 
+E E R R R R R B B B Y Y   I M J J T L L K K N N   N a a a V V V 
+D U U U U U U U U B Y Y I I J J   T T L K K N     a a     V V 
+
+
+Population size:180
+Max generations:200
+Selection:Tournament(10)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Scramble
+Mutation prob.: 0.1
+genome: [13, 9, 16, 26, 17, 15, 2, 21, 23, 25, 3, 4, 7, 12, 14, 20, 22, 28, 6, 11, 5, 24, 19, 10, 0, 8, 1, 18, 27]
+fitness: 61.2
+cuts: 209
+waste: 23
+
+N N N N N N J J   C V V W W X X X X X Z Z Z Z U U U U U U U U 
+N N P N   J J Q Q C   V V W W W X X X Z   M Z     K K K F F S S 
+N   P   J J Q Q Q C H H V V W W W W X Z M M M M O K K K F F S S B 
+a   P J J Q Q Q Q C C H   V V V V V X Z Z M   O O L L     F F B B 
+a   P J J Q Q R R R C H H A A V V V V Y Y M   O L L L L L F F B 
+a a G G J J   R R R R R E   V V V c c Y Y O O O T I I L L b B B 
+D a G G J J J E E E E E E   V V c c c Y Y O O T T I b b b b b b b 

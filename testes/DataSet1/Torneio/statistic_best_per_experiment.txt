@@ -1,0 +1,120 @@
+
+
+Population size:150
+Max generations:50
+Selection:Tournament(2)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Insert
+Mutation prob.: 0.1
+genome: [44, 43, 21, 16, 34, 42, 23, 18, 37, 33, 46, 28, 45, 50, 19, 39, 27, 9, 40, 10, 48, 49, 24, 32, 29, 31, 30, 51, 35, 8, 36, 38, 0, 1, 3, 11, 26, 4, 25, 6, 22, 17, 47, 5, 41, 20, 12, 13, 15, 2, 14, 7]
+fitness: 54.2
+cuts: 251
+waste: 1
+
+s s s s s i h h h h h h h n n n w w w Y Y e e e e e e R R R R M M 
+s s s s s i u u u c y y y n n n w w w Y Y z z z z m m m v v v M M 
+r r Q X B i u u u c y y y n n n w w w Y Y z z z z m m m v v v N N 
+r r Q X D i u u u c y y y J J J w w w d f z z z z m m m v v v N N 
+r r Q X L i u u u c y y y K K K x x x d f z z z z a a W v v v P P 
+r r Q X L i b b b c y y y I I I x x x d f j j k k a a W p p p P P 
+r r A X L i b b b c T T T T E E x x x d f j j k k a a W p p p O O 
+V V V V V S S S S t t t t o o o x x x d f j j k k Z Z W p p p O O 
+q q q q q l l l l t t t t o o o x x x d f j j k k Z Z W U U U U U 
+q q q q q l l l l t t t t o o o g g g g g g g G G Z Z F F C H H 
+
+
+Population size:150
+Max generations:50
+Selection:Tournament(4)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Insert
+Mutation prob.: 0.1
+genome: [41, 29, 32, 42, 39, 10, 20, 11, 16, 25, 37, 13, 27, 34, 45, 8, 30, 7, 36, 51, 5, 28, 44, 3, 26, 49, 22, 31, 38, 40, 21, 48, 47, 33, 46, 35, 9, 15, 2, 17, 1, 50, 23, 14, 0, 43, 19, 12, 18, 24, 6, 4]
+fitness: 54.2
+cuts: 251
+waste: 1
+
+p p p K N N g l l t t t k k k k x x x o o o v v v v J P P G r r S 
+p p p K N N g l l t t t k k k k x x x o o o v v v v J P P G r r S 
+p p p K H H g l l t t t z z z z x x x o o o v v v v J y y y r r S 
+d d d d d d g l l t t t z z z z x x x h h h h h h h A y y y r r S 
+q q q q q U g b b F F e z z z z x x x R R R R u u u u y y y r r E 
+q q q q q U g b b D C e z z z z f f f f f f B u u u u y y y M M E 
+n n n Q I U g b b a a e c c c c c c V V V V V u u u u y y y M M 
+n n n Q I U Z Z Z a a e s s s s s m m m w w w w j j j j O O Y Y Y 
+n n n Q I U Z Z Z a a e s s s s s m m m w w w w j j j j O O Y Y Y 
+L L L Q i i i i i i i e W W W W W m m m w w w w X X X X X T T T T 
+
+
+Population size:150
+Max generations:50
+Selection:Tournament(6)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Insert
+Mutation prob.: 0.1
+genome: [45, 40, 34, 16, 36, 20, 43, 46, 48, 25, 2, 24, 18, 0, 17, 8, 32, 39, 35, 42, 33, 11, 29, 30, 31, 14, 13, 37, 50, 23, 4, 5, 47, 22, 1, 19, 3, 21, 44, 49, 26, 10, 38, 27, 51, 7, 41, 15, 12, 28, 9, 6]
+fitness: 54.2
+cuts: 251
+waste: 1
+
+t t t t U w w w w Y Y n n n O O N N e y y y y y x x x x x z z z z 
+t t t t U w w w w Y Y n n n O O N N e y y y y y x x x x x z z z z 
+t t t t U w w w w Y Y n n n E E F D e y y y y y x x x x x z z z z 
+o o o i U C I I I S R q q q q q F G e a a X v v v v m m m z z z z 
+o o o i U A L L L S R q q q q q B G e a a X v v v v m m m p p p J 
+o o o i r r r r r S R h h h h h h h e a a X v v v v m m m p p p J 
+Q k k i r r r r r S R d d d d d d l l l l X s s s s s b b p p p J 
+Q k k i u u u u Z Z g g g g g g g l l l l X s s s s s b b P P M M 
+Q k k i u u u u Z Z j j j j f f f f f f V V V V V H H b b P P M M 
+Q k k i u u u u Z Z j j j j W W W W W T T T T K K K c c c c c c 
+
+
+Population size:150
+Max generations:50
+Selection:Tournament(8)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Insert
+Mutation prob.: 0.1
+genome: [33, 44, 28, 23, 46, 24, 6, 10, 12, 25, 38, 29, 15, 14, 17, 20, 16, 43, 37, 1, 13, 49, 45, 31, 7, 41, 22, 2, 36, 39, 34, 35, 0, 3, 32, 8, 21, 50, 42, 26, 47, 40, 48, 51, 11, 30, 9, 19, 4, 27, 18, 5]
+fitness: 54.2
+cuts: 251
+waste: 1
+
+h h h h h h h d P P r r x x x x x n n n i j j g y y y o o o L e T 
+s s c u u u u d P P r r x x x x x n n n i j j g y y y o o o L e T 
+s s c u u u u d O O r r x x x x x n n n i j j g y y y o o o L e T 
+s s c u u u u d O O r r t t t p p p a a i j j g y y y w w w w e T 
+s s c K Z Z Z d U Q r r t t t p p p a a i q q g y y y w w w w e S 
+s s c K Z Z Z d U Q N N t t t p p p a a i q q g b b b w w w w e S 
+G G c K B m m m U Q N N t t t C k k k k i q q g b b b z z z z J S 
+X X X X X m m m U Q f f f f f f k k k k E q q v v v v z z z z J S 
+Y Y Y M M m m m U l l l l H H A D I I I E q q v v v v z z z z J 
+Y Y Y M M R R R R l l l l W W W W W V V V V V v v v v z z z z F F 
+
+
+Population size:150
+Max generations:50
+Selection:Tournament(10)
+Recombination:PMX
+Recombination prob.: 0.8
+Mutation:Insert
+Mutation prob.: 0.1
+genome: [18, 25, 21, 37, 50, 23, 51, 14, 38, 10, 40, 29, 36, 24, 11, 30, 44, 28, 15, 31, 5, 39, 26, 0, 16, 34, 33, 32, 6, 22, 41, 7, 43, 42, 20, 35, 8, 19, 48, 12, 13, 49, 9, 45, 2, 47, 1, 46, 3, 27, 4, 17]
+fitness: 54.2
+cuts: 251
+waste: 1
+
+S S S S z z z z A d L L L e a a Q g g g g g g g T M M t t t u u u 
+Z Z Z X z z z z G d P P H e a a Q p p p I W r r T M M t t t u u u 
+Z Z Z X z z z z G d P P H e a a Q p p p I W r r T N N t t t u u u 
+V l l X z z z z C d n n n e B D Q p p p I W r r T N N t t t u u u 
+V l l X O O m m m d n n n e i i i i i i i W r r w w w w v v v v E 
+V l l X O O m m m d n n n e h h h h h h h W r r w w w w v v v v E 
+V l l K K K m m m k k k k c c c c c c U U U U U w w w w v v v v 
+V y y y y y o o o k k k k f f f f f f J J J j j j j x x x x x b b 
+F y y y y y o o o Y Y Y s s s s s q q q q q j j j j x x x x x b b 
+F y y y y y o o o Y Y Y s s s s s q q q q q R R R R x x x x x b b 

@@ -1,0 +1,5 @@
+Population size:	Max generations:	Selection:	Recombination:	Recombination prob.:	Mutation:	Mutation prob.:		Fitness:	Seed:
+180	400	Tournament(4)	Cycle	0.7	Swap	0.1		65.7	39
+360	200	Tournament(4)	Cycle	0.7	Swap	0.1		65.7	22
+400	180	Tournament(4)	Cycle	0.7	Swap	0.1		65.9	45
+90	800	Tournament(4)	Cycle	0.7	Swap	0.1		65.9	35

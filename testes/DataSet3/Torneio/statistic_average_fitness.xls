@@ -1,0 +1,6 @@
+Population size:	Max generations:	Selection:	Recombination:	Recombination prob.:	Mutation:	Mutation prob.:		Average:	StdDev:
+180	400	Tournament(2)	Order	0.8	Swap	0.1		92.96	1.797331355
+180	400	Tournament(4)	Order	0.8	Swap	0.1		83.756	4.720049152
+180	400	Tournament(6)	Order	0.8	Swap	0.1		81.828	4.081178261
+180	400	Tournament(8)	Order	0.8	Swap	0.1		83.82	4.957459027
+180	400	Tournament(10)	Order	0.8	Swap	0.1		84.416	4.077614989

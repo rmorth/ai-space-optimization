@@ -1,0 +1,120 @@
+
+
+Population size:180
+Max generations:400
+Selection:Tournament(4)
+Recombination:Cycle
+Recombination prob.: 0.7
+Mutation:Swap
+Mutation prob.: 0.1
+genome: [34, 11, 17, 9, 37, 20, 30, 26, 12, 2, 36, 44, 23, 48, 42, 32, 24, 22, 19, 46, 10, 40, 38, 39, 18, 51, 28, 45, 47, 14, 29, 43, 4, 3, 49, 0, 50, 6, 41, 15, 33, 35, 13, 1, 21, 31, 5, 27, 16, 25, 7, 8]
+fitness: 65.7
+cuts: 274
+waste: 12
+
+i i l B M X   X H g g u u u S S O O x P P P V V Q 
+i l l l M X X X H H g u   u t S t O x x x P V Q Q 
+i i l U M c w w w g g u o u t S t O y y x p V V Q 
+L D U U M c c c w Y Y o o o t t t Z Z y p p p I I 
+L D U U k k w w w Y Y   o o n   v Z v y y p p I 
+L R e e k k d q d q Y     n n n v Z v G G j F F F 
+L R e e k   d d q   K K m n n z v v v G G j j b b 
+R R a a s s s q W q K m m m z z z r r r h j j b 
+A J a a s   s W W T T T m m z N z r   r h h f f b 
+J J C C s s s W W T T E E E N N N r r r h h f f f 
+
+
+Population size:180
+Max generations:400
+Selection:Tournament(6)
+Recombination:Cycle
+Recombination prob.: 0.7
+Mutation:Swap
+Mutation prob.: 0.1
+genome: [6, 20, 34, 22, 32, 33, 17, 7, 8, 41, 0, 24, 27, 19, 18, 13, 38, 2, 48, 51, 21, 40, 49, 47, 30, 10, 31, 15, 43, 39, 26, 36, 25, 28, 14, 46, 3, 11, 45, 1, 35, 16, 9, 5, 42, 29, 50, 12, 4, 44, 23, 37]
+fitness: 73.0
+cuts: 275
+waste: 22
+
+G G   h h b b N w w w v v v r r r O O     q   q l 
+G G h h h b N N w F w D D v r   r Z O     d q l l l 
+U U U R R R b N w F w v v v r r r Z O j j q d q l 
+A U U I I R T T z F z e e J J n Z Z j j j d d X X 
+i   i I p T T T z z z e e J n n n u u u Q y y X 
+i i i p p p S S S z o o f f n n E E E u Q Q y X X 
+W W g g p p S m m o o o f f f k k u u u Q M y y 
+W W   g C C m m m K o x x a a k k k t t t M s s s 
+W H g g Y Y V m V K K x P a a c L L L L t M s   s 
+B H H Y Y Y V V V   x x P P P c c c t t t M s s s 
+
+
+Population size:180
+Max generations:400
+Selection:Tournament(8)
+Recombination:Cycle
+Recombination prob.: 0.7
+Mutation:Swap
+Mutation prob.: 0.1
+genome: [14, 46, 34, 36, 23, 21, 13, 10, 39, 42, 4, 28, 51, 29, 44, 30, 1, 7, 40, 35, 8, 49, 2, 43, 48, 45, 47, 25, 33, 11, 22, 19, 0, 41, 38, 32, 50, 31, 12, 37, 15, 18, 3, 16, 17, 24, 27, 26, 20, 9, 6, 5]
+fitness: 65.30000000000001
+cuts: 272
+waste: 12
+
+O C k k n n     z   j j r r r v v v T y y a a Y Y 
+O C k k n n n z z z j j r   r v Z v T T y a a Y Y 
+O O k V V n d z H z I j r r r v Z v T T y y S R Y 
+u u u V q   q d H H I I f f f Z Z   m m S S S R 
+B A u V V q d d P P P x x f f h h h m m m l R R 
+u u u N q E q s s s P x w w w h h W W m l l l U U 
+i i i N N E c s   s x x w t w t L W W     l Q U U 
+i D i N K E c s s s o b w t w t L W p g g Q Q U 
+X D X K K c c e e o o o b t t t L p p p g J Q G G 
+X X X M M M M e e o o b b F F F L p p g g J J G G 
+
+
+Population size:180
+Max generations:400
+Selection:Tournament(2)
+Recombination:Cycle
+Recombination prob.: 0.7
+Mutation:Swap
+Mutation prob.: 0.1
+genome: [48, 45, 33, 49, 17, 32, 37, 42, 40, 36, 46, 47, 16, 29, 15, 39, 10, 18, 20, 19, 24, 2, 27, 22, 31, 12, 7, 30, 50, 43, 3, 25, 14, 38, 35, 23, 13, 51, 11, 28, 34, 44, 6, 4, 0, 41, 5, 21, 26, 9, 8, 1]
+fitness: 64.30000000000001
+cuts: 267
+waste: 12
+
+w w w R R o o v v v S S b O O M r r r z   z s s s 
+w C C R H o o o A v F S   b O M r   r z z z s   s 
+w w w R H H o v v v F S b b O M r r r J z c s s s 
+t t t g g g u u u d F d U W W M I Z j J J c V V V 
+t D D g l g u P u d d U U W W I I Z j j c c V   V 
+t t t l l l u P u B n U U W y y Z Z j j i i p 
+h h h q l q P P Q n n n f f f y L L L L i p p p 
+h h x x q k k k Q Q n n   f f y y m X X i i p p 
+K K x q N q k k Q T T T Y Y e e m m m X G G a a 
+K x x N N N E E E T T Y Y Y e e m m X X G G a a 
+
+
+Population size:180
+Max generations:400
+Selection:Tournament(10)
+Recombination:Cycle
+Recombination prob.: 0.7
+Mutation:Swap
+Mutation prob.: 0.1
+genome: [24, 19, 17, 32, 11, 49, 51, 46, 43, 39, 10, 21, 50, 35, 5, 25, 22, 31, 30, 1, 7, 44, 14, 28, 41, 34, 3, 45, 0, 47, 8, 20, 18, 33, 16, 42, 26, 23, 6, 9, 2, 37, 40, 29, 48, 27, 38, 36, 12, 13, 4, 15]
+fitness: 66.5
+cuts: 278
+waste: 12
+
+Y B L u C u V V j j f f I I p v v v a a X X w w w 
+Y Y L u C u   V j j f f I p p p   v a a   X w   w 
+Y Y L u u u V V F j f O O p p v v v G G X X w N w 
+T T L K K r r r F Z e e O J i i U U G G o o N N E 
+T T x K   r   r F Z e e O J J i U U h h o o o N E 
+R T x x x r r r Z Z W s s s i i U h h h d o d m E 
+R R R D x   n y y W W s   s t t t Q Q Q d d m m m 
+g g z D z n n n y W W s s s t S t q Q q l b m m k 
+g A z z z H n n y y c P P P t S t   q l l l b k k 
+g g   z H H M M M M c c c P   S S q   q l b b k k 

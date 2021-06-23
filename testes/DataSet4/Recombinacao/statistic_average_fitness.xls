@@ -1,0 +1,28 @@
+Population size:	Max generations:	Selection:	Recombination:	Recombination prob.:	Mutation:	Mutation prob.:		Average:	StdDev:
+180	200	Tournament(6)	PMX	"0,1"	Scramble	0.1		71.672	4.364357456
+180	200	Tournament(6)		"0,2"	Scramble	0.1		72.108	5.686082659
+180	200	Tournament(6)		"0,3"	Scramble	0.1		71.648	5.338248402
+180	200	Tournament(6)		"0,4"	Scramble	0.1		70.644	5.06822099
+180	200	Tournament(6)		"0,5"	Scramble	0.1		69.716	5.711894957
+180	200	Tournament(6)		"0,6"	Scramble	0.1		70.156	4.104298235
+180	200	Tournament(6)		"0,7"	Scramble	0.1		69.656	4.532202996
+180	200	Tournament(6)		"0,8"	Scramble	0.1		66.508	4.350486869
+180	200	Tournament(6)		"0,9"	Scramble	0.1		68.444	5.437689215
+180	200	Tournament(6)	Cycle	"0,1"	Scramble	0.1		71.996	4.430167491
+180	200	Tournament(6)		"0,2"	Scramble	0.1		71.42	4.882007784
+180	200	Tournament(6)		"0,3"	Scramble	0.1		71.08	5.492540396
+180	200	Tournament(6)		"0,4"	Scramble	0.1		70.628	4.411804166
+180	200	Tournament(6)		"0,5"	Scramble	0.1		70.468	4.77587437
+180	200	Tournament(6)		"0,6"	Scramble	0.1		70.656	4.768234894
+180	200	Tournament(6)		"0,7"	Scramble	0.1		68.916	4.311118648
+180	200	Tournament(6)		"0,8"	Scramble	0.1		70.94	4.896733605
+180	200	Tournament(6)		"0,9"	Scramble	0.1		68.84	3.986376801
+180	200	Tournament(6)	Order	"0,1"	Scramble	0.1		72.292	4.256422911
+180	200	Tournament(6)		"0,2"	Scramble	0.1		72.588	4.888747897
+180	200	Tournament(6)		"0,3"	Scramble	0.1		71.804	5.235645519
+180	200	Tournament(6)		"0,4"	Scramble	0.1		70.932	4.813250045
+180	200	Tournament(6)		"0,5"	Scramble	0.1		70.152	5.213913693
+180	200	Tournament(6)		"0,6"	Scramble	0.1		70.24	4.788319121
+180	200	Tournament(6)		"0,7"	Scramble	0.1		70.848	4.912280122
+180	200	Tournament(6)		"0,8"	Scramble	0.1		71.048	5.182827028
+180	200	Tournament(6)		"0,9"	Scramble	0.1		70.8	4.568413291

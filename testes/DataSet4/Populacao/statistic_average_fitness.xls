@@ -1,0 +1,5 @@
+Population size:	Max generations:	Selection:	Recombination:	Recombination prob.:	Mutation:	Mutation prob.:		Average:	StdDev:
+pop 180	ger 200	Tournament(6)	PMX	0.8	Scramble	0.1		66.508	4.350486869
+pop 200	ger 180	Tournament(6)	PMX	0.8	Scramble	0.1		67.828	3.642418976
+pop 90	ger 400	Tournament(6)	PMX	0.8	Scramble	0.1		69.796	4.148925644
+pop 360	ger 100	Tournament(6)	PMX	0.8	Scramble	0.1		67.688	3.995429389

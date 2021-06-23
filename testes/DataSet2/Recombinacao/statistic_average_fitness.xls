@@ -1,0 +1,28 @@
+Population size:	Max generations:	Selection:	Recombination:	Recombination prob.:	Mutation:	Mutation prob.:		Average:	StdDev:
+180	400	Tournament(2)	Order	"0,1"	Swap	0.1		77.284	4.403060754
+180	400	Tournament(2)		"0,2"	Swap	0.1		75.512	3.521967632
+180	400	Tournament(2)		"0,3"	Swap	0.1		75.502	4.42865623
+180	400	Tournament(2)		"0,4"	Swap	0.1		76.492	3.798991445
+180	400	Tournament(2)		"0,5"	Swap	0.1		77.068	3.491271402
+180	400	Tournament(2)		"0,6"	Swap	0.1		83.048	2.631671712
+180	400	Tournament(2)		"0,7"	Swap	0.1		83.642	1.952955709
+180	400	Tournament(2)		"0,8"	Swap	0.1		84.008	0.532480986
+180	400	Tournament(2)		"0,9"	Swap	0.1		83.812	1.505408915
+180	400	Tournament(2)	Cycle	"0,1"	Swap	0.1		76.588	3.950222272
+180	400	Tournament(2)		"0,2"	Swap	0.1		76.428	3.502858261
+180	400	Tournament(2)		"0,3"	Swap	0.1		76.148	4.083441686
+180	400	Tournament(2)		"0,4"	Swap	0.1		75.92	3.722418569
+180	400	Tournament(2)		"0,5"	Swap	0.1		75.118	3.350981349
+180	400	Tournament(2)		"0,6"	Swap	0.1		75.508	3.800412609
+180	400	Tournament(2)		"0,7"	Swap	0.1		73.896	3.204743984
+180	400	Tournament(2)		"0,8"	Swap	0.1		73.75	2.250266651
+180	400	Tournament(2)		"0,9"	Swap	0.1		73.044	2.830134979
+180	400	Tournament(2)	PMX	"0,1"	Swap	0.1		76.952	3.783080226
+180	400	Tournament(2)		"0,2"	Swap	0.1		76.048	3.578225258
+180	400	Tournament(2)		"0,3"	Swap	0.1		76.478	4.029853099
+180	400	Tournament(2)		"0,4"	Swap	0.1		75.382	2.606583204
+180	400	Tournament(2)		"0,5"	Swap	0.1		74.272	4.364357456
+180	400	Tournament(2)		"0,6"	Swap	0.1		73.55	3.321159436
+180	400	Tournament(2)		"0,7"	Swap	0.1		77.766	4.802066638
+180	400	Tournament(2)		"0,8"	Swap	0.1		82.172	3.079483074
+180	400	Tournament(2)		"0,9"	Swap	0.1		82.736	2.51696325
