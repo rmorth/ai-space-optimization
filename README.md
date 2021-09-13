@@ -13,5 +13,5 @@ Implementation of a genetic algorithm, the main characteristics that are evaluat
 
 This project was made in the scope of an Artificial Intelligence course unit. Along with this, I also wrote a report detailing the implementation process as well as the experimentation process, which is not available in the repository.
 
-There will be no more work done on this project as it's concluded, although there are lots of potential improvements that can be made.
+There won't be any more work done on this project as it's concluded, although there are lots of potential improvements that can be made.
 
